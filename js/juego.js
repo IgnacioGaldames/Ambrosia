@@ -23,21 +23,24 @@ function getMessage() {
         plural = [""];
     }
 
-    // If variables turno varjugador
+    // If variables turno jugador
+
+    var conjugar = [valor_turnoJugador + "le" + plural + " toca"];
+
     if (valor_turnoJugador === "yo") {
         texto_turnoJugador = ["A mi me toca"];
     } else if (valor_turnoJugador === "izquierda") {
-        texto_turnoJugador = ["Al de mi " + valor_turnoJugador + "le" + plural + " toca"];
+        texto_turnoJugador = ["Al de mi " + conjugar];
     } else if (valor_turnoJugador === "derecha") {
-        texto_turnoJugador = ["Al de mi " + valor_turnoJugador + "le" + plural + " toca"];
+        texto_turnoJugador = ["Al de mi " + conjugar];
     } else if (valor_turnoJugador === "todos") {
-        texto_turnoJugador = ["A " + valor_turnoJugador + "le" + plural + " toca"];
+        texto_turnoJugador = ["A " + conjugar];
     } else if (valor_turnoJugador === "hombres") {
-        texto_turnoJugador = ["A los " + valor_turnoJugador + "le" + plural + " toca"];
+        texto_turnoJugador = ["A los " + conjugar];
     } else if (valor_turnoJugador === "hombres") {
-        texto_turnoJugador = ["A las " + valor_turnoJugador + "le" + plural + " toca"];
+        texto_turnoJugador = ["A las " + conjugar];
     } else if (valor_turnoJugador === "viejo" && valor_turnoJugador === "joven" && valor_turnoJugador === "alto" && valor_turnoJugador === "bajo") {
-        texto_turnoJugador = ["Al más " + valor_turnoJugador + "le" + plural + " toca"];
+        texto_turnoJugador = ["Al más " + conjugar];
     }
 
     texto_valor_accionJugador = valor_accionJugador;
