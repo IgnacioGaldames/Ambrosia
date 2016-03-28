@@ -1,10 +1,10 @@
 // Variables
 
-var turnoJugador["yo", "izquierda", "derecha", "todos", "hombres", "mujeres", "viejo", "joven", "alto", "bajo"];
+var turnoJugador["yo", "izquierda", "derecha", "todos", "hombres", "mujeres", "viejo", "joven","alto","bajo"];
 var accionJugador["trago", "nunca", "limon", "dedo", "regla", "qlh", "vom", "cultura", "shot", "cascada", "historia", "piquito", "beso"];
 var decisionJugador["elijo", "eligen"];
 var complemento_accionJugador["dar", "recibir"];
-var numero_accionJugador[1, 2, 3];
+var numero_accionJugador[1,2,3];
 
 // Funciones
 
@@ -12,12 +12,6 @@ function getMessage() {
     // Random vars
     var valor_turnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
     var valor_accionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
-
-
-    // if valor acción 
-    if (accionJugador === "trago" && accionJugador === "shot" && accionJugador === "piquito" && accionJugador === "beso") {
-        decisionJugador = arr.push("elijo", "eligen");
-    }
     var valor_decisionJugador = decisionJugador[Math.floor(Math.random() * decisionJugador.length)];
     var valor_complemento_accionJugador = complemento_accionJugador[Math.floor(Math.random() * complemento_accionJugador.length)];
     var valor_numero_accionJugador = numero_accionJugador[Math.floor(Math.random() * numero_accionJugador.length)];
@@ -42,11 +36,12 @@ function getMessage() {
         texto_turnoJugador = ["A los " + valor_turnoJugador + "le" + plural + " toca"];
     } else if (valor_turnoJugador === "hombres") {
         texto_turnoJugador = ["A las " + valor_turnoJugador + "le" + plural + " toca"];
-    } else if (valor_turnoJugador === "viejo" && valor_turnoJugador === "joven" && valor_turnoJugador === "alto" && valor_turnoJugador === "bajo") {
+    } else if (valor_turnoJugador === "viejo" && valor_turnoJugador === "joven" && valor_turnoJugador === "alto"  && valor_turnoJugador === "bajo") {
         texto_turnoJugador = ["Al más " + valor_turnoJugador + "le" + plural + " toca"];
     }
 
-    // if valor acción 
+    // if valor acción
+
 
     // Retornar valor
     return [texto_turnoJugador];
