@@ -23,7 +23,7 @@ function getMessage() {
         plural = [""];
     }
 
-    // If variables turno jugador
+    // If variables turno varjugador
     if (valor_turnoJugador === "yo") {
         texto_turnoJugador = ["A mi me toca"];
     } else if (valor_turnoJugador === "izquierda") {
@@ -40,10 +40,44 @@ function getMessage() {
         texto_turnoJugador = ["Al más " + valor_turnoJugador + "le" + plural + " toca"];
     }
 
+    texto_valor_accionJugador = valor_accionJugador;
+
     // if valor acción 
 
+    // Iconos acción juego
+
+    if (valor_accionJugador === "tomar") {
+        icono_accionJugador = ["beer"];
+    } else if (valor_accionJugador === "nunca") {
+        icono_accionJugador = ["beer"];
+    } else if (valor_accionJugador === "limon") {
+        icono_accionJugador = ["lemon-o"];
+    } else if (valor_accionJugador === "dedo") {
+        icono_accionJugador = ["hand-o-down"];
+    } else if (valor_accionJugador === "regla") {
+        icono_accionJugador = ["gavel"];
+    } else if (valor_accionJugador === "qlh") {
+        icono_accionJugador = ["beer"];
+    } else if (valor_accionJugador === "vom") {
+        icono_accionJugador = ["beer"];
+    } else if (valor_accionJugador === "cultura") {
+        icono_accionJugador = ["comments"];
+    } else if (valor_accionJugador === "shot") {
+        icono_accionJugador = ["glass"];
+    } else if (valor_accionJugador === "cascada") {
+        icono_accionJugador = ["fa-beer"];
+    } else if (valor_accionJugador === "historia") {
+        icono_accionJugador = ["book"];
+    } else if (valor_accionJugador === "piquito") {
+        icono_accionJugador = ["heart-o"];
+    } else if (valor_accionJugador === "beso") {
+        icono_accionJugador = ["heart"];
+    }
+
+    var fontAwesome = "<i class='fa fa-" + icono_accionJugador + "'></i>";
+
     // Retornar valor
-    return [texto_turnoJugador];
+    return [fontAwesome + " " + texto_turnoJugador + " " + texto_valor_accionJugador];
 }
 
 function cargarTexto() {
