@@ -24,7 +24,6 @@ function getMessage() {
     }
 
     // If variables turno jugador
-
     var conjugar = [valor_turnoJugador + "le" + plural + " toca"];
 
     if (valor_turnoJugador === "yo") {
@@ -43,12 +42,12 @@ function getMessage() {
         texto_turnoJugador = ["Al más " + conjugar];
     }
 
+
+    // if valor acción  
     texto_valor_accionJugador = valor_accionJugador;
 
-    // if valor acción 
 
     // Iconos acción juego
-
     if (valor_accionJugador === "tomar") {
         icono_accionJugador = ["beer"];
     } else if (valor_accionJugador === "nunca") {
