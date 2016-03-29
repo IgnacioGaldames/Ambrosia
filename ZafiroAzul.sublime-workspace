@@ -35,7 +35,7 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 5193,
+				"buffer_size": 6174,
 				"line_ending": "Windows"
 			}
 		}
@@ -232,6 +232,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"plural",
+			"AccionJugador",
+			"valorAccionJugador",
+			"numero_accion",
+			"numero_accionJugador",
 			"/R31P4BnJVI",
 			"/rhaLDqR31P4BnJVI",
 			"agenda",
@@ -364,15 +369,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5193,
+						"buffer_size": 6174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								603,
-								603
+								3461,
+								3461
 							]
 						],
 						"settings":
@@ -382,7 +387,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1026.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
