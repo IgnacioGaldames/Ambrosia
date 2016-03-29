@@ -4,13 +4,15 @@ new WOW().init();
 
 // #Variables
 var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres"];
-var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "piquito", "beso", "compañero"];
+var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
 var numeroAccionJugador = [1, 2, 3];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
 
 var decisionJugador = ["elegir", "elejido"];
 var complemento_accionJugador = ["dar", "recibir"];
+
+var clicks = 0;
 
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia. 
 // IDEA: Preguntar si hay gomita.
@@ -24,6 +26,12 @@ var mensaje = function getMessage() {
     // Variables Acciones comunes
     if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres") {
         accionJugador.push("trago", "shot");
+    }
+    if (clicks > 10) {
+        accionJugador.push("piquito","compañero");
+    }
+    else if (clicks > 20) {
+        accionJugador.push("beso");
     }
 
     var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
@@ -150,5 +158,6 @@ var mensaje = function getMessage() {
 }
 
 function cargarTexto() {
+    clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
 }
