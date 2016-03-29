@@ -30,7 +30,7 @@ var mensaje = function getMessage() {
     var valorNumeroAccionJugador = numeroAccionJugador[Math.floor(Math.random() * numeroAccionJugador.length)];
     var valorNumeroDuracionAccionJugador = numeroDuracionAccionJugador[Math.floor(Math.random() * numeroDuracionAccionJugador.length)];
     var valorDuracionAccion = duracionAccion[Math.floor(Math.random() * duracionAccion.length)];
-    
+
     var valorDecisionJugador = decisionJugador[Math.floor(Math.random() * decisionJugador.length)];
     var valorComplementoAccionJugador = complemento_accionJugador[Math.floor(Math.random() * complemento_accionJugador.length)];
 
@@ -125,15 +125,15 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "regla") {
         icono_accionJugador = ["gavel"];
     } else if (valorAccionJugador === "qlh") {
-        icono_accionJugador = ["beer"];
+        icono_accionJugador = ["balance-scale"];
     } else if (valorAccionJugador === "vom") {
-        icono_accionJugador = ["beer"];
+        icono_accionJugador = ["bullhorn"];
     } else if (valorAccionJugador === "cultura") {
         icono_accionJugador = ["comments"];
     } else if (valorAccionJugador === "shot") {
         icono_accionJugador = ["glass"];
     } else if (valorAccionJugador === "cascada") {
-        icono_accionJugador = ["fa-beer"];
+        icono_accionJugador = ["users"];
     } else if (valorAccionJugador === "historia") {
         icono_accionJugador = ["book"];
     } else if (valorAccionJugador === "piquito") {
