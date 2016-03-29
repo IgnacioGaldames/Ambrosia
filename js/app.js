@@ -8,6 +8,7 @@ var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada
 var numeroAccionJugador = [1, 2, 3];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
+
 var decisionJugador = ["elegir", "elejido"];
 var complemento_accionJugador = ["dar", "recibir"];
 
@@ -29,6 +30,7 @@ var mensaje = function getMessage() {
     var valorNumeroAccionJugador = numeroAccionJugador[Math.floor(Math.random() * numeroAccionJugador.length)];
     var valorNumeroDuracionAccionJugador = numeroDuracionAccionJugador[Math.floor(Math.random() * numeroDuracionAccionJugador.length)];
     var valorDuracionAccion = duracionAccion[Math.floor(Math.random() * duracionAccion.length)];
+    
     var valorDecisionJugador = decisionJugador[Math.floor(Math.random() * decisionJugador.length)];
     var valorComplementoAccionJugador = complemento_accionJugador[Math.floor(Math.random() * complemento_accionJugador.length)];
 
@@ -51,7 +53,16 @@ var mensaje = function getMessage() {
         textoValorDuracionAccion = ["por siempre jamás"];
     }
 
-    // Iconos acción juego
+    // Variables lenguage
+    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres") {
+        pluralJugadores = ["s"];
+    } else {
+        pluralJugadores = [" "];
+    }
+    var conjugar = [" " + valorTurnoJugador + " " + "le" + pluralJugadores + " " + "toca"];
+    var conjugacionesTomar = ["tomar" + " " + valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones];
+
+    // Oraciones acción juego
     if (valorAccionJugador === "nunca") {
         textoAccionJugador = ["decir nunca nunca"];
     } else if (valorAccionJugador === "limon") {
@@ -77,18 +88,10 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "compañero") {
         textoAccionJugador = ["debe elegir a alguien para que haga lo mismo" + " " + textoValorDuracionAccion];
     } else if (valorAccionJugador === "trago") {
-        textoAccionJugador = ["tomar" + " " + valorNumeroAccionJugador + " " + "trago" + pluralNumeroAcciones];
+        textoAccionJugador = [conjugacionesTomar];
     } else if (valorAccionJugador === "shot") {
-        textoAccionJugador = ["tomar" + " " + valorNumeroAccionJugador + " " + "shot" + pluralNumeroAcciones];
+        textoAccionJugador = [conjugacionesTomar];
     }
-
-    // Variables lenguage
-    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres") {
-        pluralJugadores = ["s"];
-    } else {
-        pluralJugadores = [" "];
-    }
-    var conjugar = [" " + valorTurnoJugador + " " + "le" + pluralJugadores + " " + "toca"];
 
     // Variables turno jugador
     if (valorTurnoJugador === "yo") {
