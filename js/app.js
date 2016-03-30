@@ -111,33 +111,33 @@ var mensaje = function getMessage() {
     if (valorAccionJugador === "nunca") {
         textoEjemploAccionJugador = ["ejemplo"];
     } else if (valorAccionJugador === "limon") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["( Quién se equivoca, toma)"];
     } else if (valorAccionJugador === "dedo") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(El último en poner el dedo, toma)"];
     } else if (valorAccionJugador === "qlh") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Quién saque más votos, toma)"];
     } else if (valorAccionJugador === "vom") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Todos adivinan si es verdad o mentira. Quienes no acierten, toman)"];
     } else if (valorAccionJugador === "cultura") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Palabras sin a, como por ejemplo 'PATATA')"];
     } else if (valorAccionJugador === "cascada") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Todos empiezan a tomar al mismo tiempo y solo dejan de hacerlo cuando el que está a su derecha para)"];
     } else if (valorAccionJugador === "historia") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Dice un palabra y el resto la repite, añadiendo su propia palabra)"];
     } else if (valorAccionJugador === "regla") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Una regla ingeniosa y atrevida)"];
     } else if (valorAccionJugador === "piquito") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(dar un pequeño beso en los labios)"];
     } else if (valorAccionJugador === "beso") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(dar un beso de verdad, como los que dan en Francia.)"];
     } else if (valorAccionJugador === "compañero") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(El compañero tendra que hacer lo mismo. Tomar lo mismo, cumplir las mismas reglas y todo lo demás que el juego mande)"];
     } else if (valorAccionJugador === "trago") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Levante el vaso y beba su contenido)"];
     } else if (valorAccionJugador === "shot") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Un trago fuerte, al seco. Como un disparo)"];
     } else if (valorAccionJugador === "prenda") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
     }
 
     // Variables turno jugador
