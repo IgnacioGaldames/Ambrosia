@@ -4,8 +4,8 @@ new WOW().init();
 
 // #Variables
 var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres"];
-var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
-var numeroAccionJugador = [1, 2, 3];
+var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot"];
+var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
 
@@ -14,7 +14,7 @@ var complemento_accionJugador = ["dar", "recibir"];
 
 var clicks = 0;
 
-// IDEA: si sale penitencia como valor, entonces cargar una penitencia. 
+// IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
 
 // #Funciones
@@ -24,14 +24,18 @@ var mensaje = function getMessage() {
     var valorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
 
     // Variables Acciones comunes
-    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres") {
-        accionJugador.push("trago", "shot");
-    }
     if (clicks > 10) {
-        accionJugador.push("piquito","compañero");
+      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero"];
     }
     else if (clicks > 20) {
-        accionJugador.push("beso");
+      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero",  "piquito"];
+      numeroAccionJugador = [1, 2, 3, 4];
+    }
+    else if (clicks > 30) {
+      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso"];
+    }
+    else if (clicks > 40) {
+      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
     }
 
     var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
@@ -82,7 +86,7 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "vom") {
         textoAccionJugador = ["decir una verdad o una mentira"];
     } else if (valorAccionJugador === "cultura") {
-        textoAccionJugador = ["debe empezar un tema para jugar al bachillerato"];
+        textoAccionJugador = ["empezar un tema para jugar al bachillerato"];
     } else if (valorAccionJugador === "cascada") {
         textoAccionJugador = ["iniciar la cascada"];
     } else if (valorAccionJugador === "historia") {
@@ -94,11 +98,46 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "beso") {
         textoAccionJugador = ["dar un beso"];
     } else if (valorAccionJugador === "compañero") {
-        textoAccionJugador = ["debe elegir a alguien para que haga lo mismo" + " " + textoValorDuracionAccion];
+        textoAccionJugador = ["elegir a alguien para que sufra el mismo destino" + " " + textoValorDuracionAccion];
     } else if (valorAccionJugador === "trago") {
         textoAccionJugador = [conjugacionesTomar];
     } else if (valorAccionJugador === "shot") {
         textoAccionJugador = [conjugacionesTomar];
+    } else if (valorAccionJugador === "prenda") {
+        textoAccionJugador = ["quitarse una prenda"];
+    }
+
+    // Ejemplos acción juego
+    if (valorAccionJugador === "nunca") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "limon") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "dedo") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "qlh") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "vom") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "cultura") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "cascada") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "historia") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "regla") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "piquito") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "beso") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "compañero") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "trago") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "shot") {
+        textoEjemploAccionJugador = ["ejemplo"];
+    } else if (valorAccionJugador === "prenda") {
+        textoEjemploAccionJugador = ["ejemplo"];
     }
 
     // Variables turno jugador
@@ -117,9 +156,6 @@ var mensaje = function getMessage() {
     } else if (valorTurnoJugador === "viejo" || valorTurnoJugador === "joven" || valorTurnoJugador === "alto" || valorTurnoJugador === "bajo") {
         texto_turnoJugador = ["Al más" + conjugar];
     }
-
-    console.log(texto_turnoJugador);
-    console.log(plural);
 
     // Iconos acción juego
     if (valorAccionJugador === "trago") {
@@ -152,9 +188,18 @@ var mensaje = function getMessage() {
 
     var fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
     var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
+    var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
+
+
+        console.log(texto_turnoJugador);
+        console.log(clicks);
+        console.log(accionJugador);
+        console.log(valorAccionJugador);
+        console.log(valorTurnoJugador);
+        console.log(cantidadJugadores);
 
     // Retornar valor
-    return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>"];
+    return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
 }
 
 function cargarTexto() {
