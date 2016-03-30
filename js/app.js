@@ -190,14 +190,6 @@ var mensaje = function getMessage() {
     var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
     var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
 
-
-        console.log(texto_turnoJugador);
-        console.log(clicks);
-        console.log(accionJugador);
-        console.log(valorAccionJugador);
-        console.log(valorTurnoJugador);
-        console.log(cantidadJugadores);
-
     // Retornar valor
     return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
 }
