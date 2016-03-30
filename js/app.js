@@ -37,6 +37,9 @@ var mensaje = function getMessage() {
     else if (clicks > 40) {
       accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
     }
+    else if (clicks > 40) {
+      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda", "penitencia"];
+    }
 
     var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
     var valorNumeroAccionJugador = numeroAccionJugador[Math.floor(Math.random() * numeroAccionJugador.length)];
@@ -106,6 +109,9 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "prenda") {
         textoAccionJugador = ["quitarse una prenda"];
     }
+     else if (valorAccionJugador === "penitencia") {
+        textoAccionJugador = ["cumplir una penitencia"];
+    }
 
     // Ejemplos acción juego
     if (valorAccionJugador === "nunca") {
@@ -138,6 +144,8 @@ var mensaje = function getMessage() {
         textoEjemploAccionJugador = ["(Un trago fuerte, al seco. Como un disparo)"];
     } else if (valorAccionJugador === "prenda") {
         textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
+    } else if (valorAccionJugador === "prenda") {
+        textoEjemploAccionJugador = ["(hacer lo que le pidan que haga)"];
     }
 
     // Variables turno jugador
@@ -183,6 +191,10 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "piquito") {
         icono_accionJugador = ["heart-o"];
     } else if (valorAccionJugador === "beso") {
+        icono_accionJugador = ["heart"];
+    } else if (valorAccionJugador === "prenda") {
+        icono_accionJugador = ["heart"];
+    } else if (valorAccionJugador === "penitencia") {
         icono_accionJugador = ["heart"];
     }
 
