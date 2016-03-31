@@ -37,7 +37,7 @@ var mensaje = function getMessage() {
     else if (clicks > 40) {
       accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
     }
-    else if (clicks > 40) {
+    else if (clicks > 50) {
       accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda", "penitencia"];
     }
 
@@ -144,7 +144,7 @@ var mensaje = function getMessage() {
         textoEjemploAccionJugador = ["(Un trago fuerte, al seco. Como un disparo)"];
     } else if (valorAccionJugador === "prenda") {
         textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
-    } else if (valorAccionJugador === "prenda") {
+    } else if (valorAccionJugador === "penitencia") {
         textoEjemploAccionJugador = ["(hacer lo que le pidan que haga)"];
     }
 
