@@ -18,6 +18,7 @@ var clicks = 0;
 // IDEA: Preguntar si hay gomita.
 
 // #Funciones
+
 var mensaje = function getMessage() {
 
     // Random vars
@@ -165,9 +166,9 @@ var mensaje = function getMessage() {
         texto_turnoJugador = ["Al más" + conjugar];
     }
      else if (valorTurnoJugador === "par" || === "impar") {
-        texto_turnoJugador = ["A los nacidos en un año" +" " + valorTurnoJugador];
+        texto_turnoJugador = ["A los nacidos en un año" +" " + valorTurnoJugador + "les toca"];
     } else if (valorTurnoJugador === "risa") {
-        texto_turnoJugador = ["Al que se ría primero"];
+        texto_turnoJugador = ["Al que se ría primero le toca"];
     }
 
     // Iconos acción juego
@@ -210,8 +211,17 @@ var mensaje = function getMessage() {
     // Retornar valor
     return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
 }
+var reglas = function getReglas () {
+    if (accionJugador === "regla") {
+        var lasReglas = prompt("Añadir Regla");
+    }
+    // Retornar valor
+    return ["<p>" + lasReglas + "</p>"];
+
+}
 
 function cargarTexto() {
     clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
+    document.getElementById("reglas").innerHTML = reglas();
 }
