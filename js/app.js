@@ -3,7 +3,7 @@ $(document).foundation();
 new WOW().init();
 
 // #Variables
-var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres"];
+var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres", "solteros", "con pareja","par","impar","risa"];
 var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot"];
 var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
@@ -69,7 +69,7 @@ var mensaje = function getMessage() {
     }
 
     // Variables lenguage
-    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres") {
+    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
         pluralJugadores = ["s"];
     } else {
         pluralJugadores = [" "];
@@ -157,12 +157,17 @@ var mensaje = function getMessage() {
         texto_turnoJugador = ["Al de mi" + conjugar];
     } else if (valorTurnoJugador === "todos") {
         texto_turnoJugador = ["A" + conjugar];
-    } else if (valorTurnoJugador === "hombres") {
+    } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
         texto_turnoJugador = ["A los" + conjugar];
     } else if (valorTurnoJugador === "mujeres") {
         texto_turnoJugador = ["A las" + conjugar];
     } else if (valorTurnoJugador === "viejo" || valorTurnoJugador === "joven" || valorTurnoJugador === "alto" || valorTurnoJugador === "bajo") {
         texto_turnoJugador = ["Al más" + conjugar];
+    }
+     else if (valorTurnoJugador === "par" || === "impar") {
+        texto_turnoJugador = ["A los nacidos en un año" +" " + valorTurnoJugador];
+    } else if (valorTurnoJugador === "risa") {
+        texto_turnoJugador = ["Al que se ría primero"];
     }
 
     // Iconos acción juego
