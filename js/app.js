@@ -3,7 +3,7 @@ $(document).foundation();
 new WOW().init();
 
 // #Variables
-var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres", "solteros", "con pareja","par","impar","risa"];
+var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres", "solteros", "con pareja", "par", "impar", "risa"];
 var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot"];
 var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
@@ -26,20 +26,16 @@ var mensaje = function getMessage() {
 
     // Variables Acciones comunes
     if (clicks > 10) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero"];
-    }
-    else if (clicks > 20) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero",  "piquito"];
-      numeroAccionJugador = [1, 2, 3, 4];
-    }
-    else if (clicks > 30) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso"];
-    }
-    else if (clicks > 40) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
-    }
-    else if (clicks > 50) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda", "penitencia"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero"];
+    } else if (clicks > 20) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito"];
+        numeroAccionJugador = [1, 2, 3, 4];
+    } else if (clicks > 30) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso"];
+    } else if (clicks > 40) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
+    } else if (clicks > 50) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda", "penitencia"];
     }
 
     var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
@@ -109,8 +105,7 @@ var mensaje = function getMessage() {
         textoAccionJugador = [conjugacionesTomar];
     } else if (valorAccionJugador === "prenda") {
         textoAccionJugador = ["quitarse una prenda"];
-    }
-     else if (valorAccionJugador === "penitencia") {
+    } else if (valorAccionJugador === "penitencia") {
         textoAccionJugador = ["cumplir una penitencia"];
     }
 
@@ -120,7 +115,7 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "limon") {
         textoEjemploAccionJugador = ["( Quién se equivoca, toma)"];
     } else if (valorAccionJugador === "dedo") {
-        textoEjemploAccionJugador = ["(El último en poner el dedo, toma)"];
+        textoEjemploAccionJugador = ["(El último en poner el dedosobre la mesa toma)"];
     } else if (valorAccionJugador === "qlh") {
         textoEjemploAccionJugador = ["(Quién saque más votos, toma)"];
     } else if (valorAccionJugador === "vom") {
@@ -152,9 +147,7 @@ var mensaje = function getMessage() {
     // Variables turno jugador
     if (valorTurnoJugador === "yo") {
         texto_turnoJugador = ["A mi me toca"];
-    } else if (valorTurnoJugador === "izquierda") {
-        texto_turnoJugador = ["Al de mi" + conjugar];
-    } else if (valorTurnoJugador === "derecha") {
+    } else if (valorTurnoJugador === "izquierda" || valorTurnoJugador === "derecha") {
         texto_turnoJugador = ["Al de mi" + conjugar];
     } else if (valorTurnoJugador === "todos") {
         texto_turnoJugador = ["A" + conjugar];
@@ -164,9 +157,8 @@ var mensaje = function getMessage() {
         texto_turnoJugador = ["A las" + conjugar];
     } else if (valorTurnoJugador === "viejo" || valorTurnoJugador === "joven" || valorTurnoJugador === "alto" || valorTurnoJugador === "bajo") {
         texto_turnoJugador = ["Al más" + conjugar];
-    }
-     else if (valorTurnoJugador === "par" || === "impar") {
-        texto_turnoJugador = ["A los nacidos en un año" +" " + valorTurnoJugador + "les toca"];
+    } else if (valorTurnoJugador === "par" || valorTurnoJugador === "impar") {
+        texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + "les toca"];
     } else if (valorTurnoJugador === "risa") {
         texto_turnoJugador = ["Al que se ría primero le toca"];
     }
@@ -199,9 +191,9 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "beso") {
         icono_accionJugador = ["heart"];
     } else if (valorAccionJugador === "prenda") {
-        icono_accionJugador = ["heart"];
+        icono_accionJugador = ["shopping-bag"];
     } else if (valorAccionJugador === "penitencia") {
-        icono_accionJugador = ["heart"];
+        icono_accionJugador = ["exclamation-circle"];
     }
 
     var fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
@@ -211,12 +203,12 @@ var mensaje = function getMessage() {
     // Retornar valor
     return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
 }
-var reglas = function getReglas () {
+var reglas = function getReglas() {
     if (accionJugador === "regla") {
         var lasReglas = prompt("Añadir Regla");
     }
     // Retornar valor
-    return ["<p>" + lasReglas + "</p>"];
+    return ["<p>" +"Las reglas actuales son:" + " " + lasReglas + "</p>"];
 
 }
 

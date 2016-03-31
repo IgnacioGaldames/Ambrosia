@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"las",
+				"lasReglas"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
 				"pa",
-				"padding-right"
+				"pareja"
+			],
+			[
+				"palabra",
+				"palabraLimon"
 			],
 			[
 				"font-s",
@@ -35,7 +47,15 @@
 			"file": "js/app.js",
 			"settings":
 			{
-				"buffer_size": 10428,
+				"buffer_size": 11153,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1473,
 				"line_ending": "Windows"
 			}
 		}
@@ -86,6 +106,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Ignacio Galdames/Documents/GitHub/ZafiroAzul/js/app.js",
 		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/contrataciones_sometidas_sistema_de_compras_publicas.html",
 		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/vitas/inc/slider_vitasalud.html",
 		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/vitas/vita_salud/inc/menu.html",
@@ -212,8 +233,7 @@
 		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/ejecucion_presupuestaria.html",
 		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/ejecucion_presupuestaria_analitica_2016.html",
 		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/ejecucion_p_iniciativas_inversion_2016.html",
-		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/registro_mensual_de_gasto_salud_2016.html",
-		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/programas_subsidios_otros_beneficios.html"
+		"/C/Users/Ignacio Galdames/SVN/vitacura5/html/resources/templates/transparencia/registro_mensual_de_gasto_salud_2016.html"
 	],
 	"find":
 	{
@@ -232,6 +252,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"conjugar",
 			"plural",
 			"AccionJugador",
 			"valorAccionJugador",
@@ -369,15 +390,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10428,
+						"buffer_size": 11153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9392,
-								9392
+								10047,
+								10047
 							]
 						],
 						"settings":
@@ -387,10 +408,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2339.0,
+						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1473,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								934,
+								934
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
