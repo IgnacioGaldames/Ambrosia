@@ -10,7 +10,7 @@ var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
 
 var decisionJugador = ["elegir", "elejido"];
-var complemento_accionJugador = ["dar", "recibir"];
+var complemento_accionJugador = ["tomar", "regalar"];
 
 var clicks = 0;
 
@@ -72,7 +72,8 @@ var mensaje = function getMessage() {
         pluralJugadores = [" "];
     }
     var conjugar = [" " + valorTurnoJugador + " " + "le" + pluralJugadores + " " + "toca"];
-    var conjugacionesTomar = ["tomar" + " " + valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones];
+    var conjugacionesTomar = [valorComplementoAccionJugador + " " + valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones];
+
 
     // Oraciones acción juego
     if (valorAccionJugador === "nunca") {
@@ -115,7 +116,7 @@ var mensaje = function getMessage() {
     } else if (valorAccionJugador === "limon") {
         textoEjemploAccionJugador = ["( Quién se equivoca, toma)"];
     } else if (valorAccionJugador === "dedo") {
-        textoEjemploAccionJugador = ["(El último en poner el dedosobre la mesa toma)"];
+        textoEjemploAccionJugador = ["(El último en poner el dedo sobre la mesa toma)"];
     } else if (valorAccionJugador === "qlh") {
         textoEjemploAccionJugador = ["(Quién saque más votos, toma)"];
     } else if (valorAccionJugador === "vom") {
@@ -158,7 +159,7 @@ var mensaje = function getMessage() {
     } else if (valorTurnoJugador === "viejo" || valorTurnoJugador === "joven" || valorTurnoJugador === "alto" || valorTurnoJugador === "bajo") {
         texto_turnoJugador = ["Al más" + conjugar];
     } else if (valorTurnoJugador === "par" || valorTurnoJugador === "impar") {
-        texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + "les toca"];
+        texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + " " + "les toca"];
     } else if (valorTurnoJugador === "risa") {
         texto_turnoJugador = ["Al que se ría primero le toca"];
     }
@@ -202,18 +203,19 @@ var mensaje = function getMessage() {
 
     // Retornar valor
     return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
-}
-var reglas = function getReglas() {
-    if (accionJugador === "regla") {
-        var lasReglas = prompt("Añadir Regla");
-    }
-    // Retornar valor
-    return ["<p>" +"Las reglas actuales son:" + " " + lasReglas + "</p>"];
 
 }
+
+var ultimoClick = 0;
 
 function cargarTexto() {
-    clicks += 1;
-    document.getElementById("texto").innerHTML = mensaje();
-    document.getElementById("reglas").innerHTML = reglas();
+    var tiempoActual = (new Date()).getTime();
+    if (tiempoActual > (ultimoClick + 10000)) {
+      clicks += 1;
+      document.getElementById("texto").innerHTML = mensaje();
+    }
+    else {
+        alert("No te saltes turnos! Juega antes de volver a apretar el botón");
+    }
+    ultimoClick = tiempoActual;
 }
