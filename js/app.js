@@ -210,7 +210,7 @@ var ultimoClick = 0;
 
 function cargarTexto() {
     var tiempoActual = (new Date()).getTime();
-    if (tiempoActual > (ultimoClick + 10000)) {
+    if (tiempoActual > (ultimoClick + 5000)) {
       clicks += 1;
       document.getElementById("texto").innerHTML = mensaje();
     }
