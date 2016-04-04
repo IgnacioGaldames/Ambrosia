@@ -3,14 +3,14 @@ $(document).foundation();
 new WOW().init();
 
 // #Variables
-var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres"];
+var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres", "solteros", "con pareja", "par", "impar", "risa"];
 var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot"];
 var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
 
 var decisionJugador = ["elegir", "elejido"];
-var complemento_accionJugador = ["dar", "recibir"];
+var complemento_accionJugador = ["tomar", "regalar"];
 
 var clicks = 0;
 
@@ -18,6 +18,7 @@ var clicks = 0;
 // IDEA: Preguntar si hay gomita.
 
 // #Funciones
+
 var mensaje = function getMessage() {
 
     // Random vars
@@ -25,17 +26,16 @@ var mensaje = function getMessage() {
 
     // Variables Acciones comunes
     if (clicks > 10) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero"];
-    }
-    else if (clicks > 20) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero",  "piquito"];
-      numeroAccionJugador = [1, 2, 3, 4];
-    }
-    else if (clicks > 30) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso"];
-    }
-    else if (clicks > 40) {
-      accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero"];
+    } else if (clicks > 20) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito"];
+        numeroAccionJugador = [1, 2, 3, 4];
+    } else if (clicks > 30) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso"];
+    } else if (clicks > 40) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda"];
+    } else if (clicks > 50) {
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "shot", "compañero", "piquito", "beso", "prenda", "penitencia"];
     }
 
     var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
@@ -66,13 +66,14 @@ var mensaje = function getMessage() {
     }
 
     // Variables lenguage
-    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres") {
+    if (valorTurnoJugador === "todos" || valorTurnoJugador === "hombres" || valorTurnoJugador === "mujeres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
         pluralJugadores = ["s"];
     } else {
         pluralJugadores = [" "];
     }
     var conjugar = [" " + valorTurnoJugador + " " + "le" + pluralJugadores + " " + "toca"];
-    var conjugacionesTomar = ["tomar" + " " + valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones];
+    var conjugacionesTomar = [valorComplementoAccionJugador + " " + valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones];
+
 
     // Oraciones acción juego
     if (valorAccionJugador === "nunca") {
@@ -105,56 +106,62 @@ var mensaje = function getMessage() {
         textoAccionJugador = [conjugacionesTomar];
     } else if (valorAccionJugador === "prenda") {
         textoAccionJugador = ["quitarse una prenda"];
+    } else if (valorAccionJugador === "penitencia") {
+        textoAccionJugador = ["cumplir una penitencia"];
     }
 
     // Ejemplos acción juego
     if (valorAccionJugador === "nunca") {
         textoEjemploAccionJugador = ["ejemplo"];
     } else if (valorAccionJugador === "limon") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["( Quién se equivoca, toma)"];
     } else if (valorAccionJugador === "dedo") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(El último en poner el dedo sobre la mesa toma)"];
     } else if (valorAccionJugador === "qlh") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Quién saque más votos, toma)"];
     } else if (valorAccionJugador === "vom") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Todos adivinan si es verdad o mentira. Quienes no acierten, toman)"];
     } else if (valorAccionJugador === "cultura") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Palabras sin a, como por ejemplo 'PATATA')"];
     } else if (valorAccionJugador === "cascada") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Todos empiezan a tomar al mismo tiempo y solo dejan de hacerlo cuando el que está a su derecha para)"];
     } else if (valorAccionJugador === "historia") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Dice un palabra y el resto la repite, añadiendo su propia palabra)"];
     } else if (valorAccionJugador === "regla") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Una regla ingeniosa y atrevida)"];
     } else if (valorAccionJugador === "piquito") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(dar un pequeño beso en los labios)"];
     } else if (valorAccionJugador === "beso") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(dar un beso de verdad, como los que dan en Francia.)"];
     } else if (valorAccionJugador === "compañero") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(El compañero tendra que hacer lo mismo. Tomar lo mismo, cumplir las mismas reglas y todo lo demás que el juego mande)"];
     } else if (valorAccionJugador === "trago") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Levante el vaso y beba su contenido)"];
     } else if (valorAccionJugador === "shot") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Un trago fuerte, al seco. Como un disparo)"];
     } else if (valorAccionJugador === "prenda") {
-        textoEjemploAccionJugador = ["ejemplo"];
+        textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
+    } else if (valorAccionJugador === "penitencia") {
+        textoEjemploAccionJugador = ["(hacer lo que le pidan que haga)"];
     }
 
     // Variables turno jugador
     if (valorTurnoJugador === "yo") {
         texto_turnoJugador = ["A mi me toca"];
-    } else if (valorTurnoJugador === "izquierda") {
-        texto_turnoJugador = ["Al de mi" + conjugar];
-    } else if (valorTurnoJugador === "derecha") {
+    } else if (valorTurnoJugador === "izquierda" || valorTurnoJugador === "derecha") {
         texto_turnoJugador = ["Al de mi" + conjugar];
     } else if (valorTurnoJugador === "todos") {
         texto_turnoJugador = ["A" + conjugar];
-    } else if (valorTurnoJugador === "hombres") {
+    } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
         texto_turnoJugador = ["A los" + conjugar];
     } else if (valorTurnoJugador === "mujeres") {
         texto_turnoJugador = ["A las" + conjugar];
     } else if (valorTurnoJugador === "viejo" || valorTurnoJugador === "joven" || valorTurnoJugador === "alto" || valorTurnoJugador === "bajo") {
         texto_turnoJugador = ["Al más" + conjugar];
+    } else if (valorTurnoJugador === "par" || valorTurnoJugador === "impar") {
+        texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + " " + "les toca"];
+    } else if (valorTurnoJugador === "risa") {
+        texto_turnoJugador = ["Al que se ría primero le toca"];
     }
 
     // Iconos acción juego
@@ -184,6 +191,10 @@ var mensaje = function getMessage() {
         icono_accionJugador = ["heart-o"];
     } else if (valorAccionJugador === "beso") {
         icono_accionJugador = ["heart"];
+    } else if (valorAccionJugador === "prenda") {
+        icono_accionJugador = ["shopping-bag"];
+    } else if (valorAccionJugador === "penitencia") {
+        icono_accionJugador = ["exclamation-circle"];
     }
 
     var fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
@@ -192,9 +203,19 @@ var mensaje = function getMessage() {
 
     // Retornar valor
     return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
+
 }
 
+var ultimoClick = 0;
+
 function cargarTexto() {
-    clicks += 1;
-    document.getElementById("texto").innerHTML = mensaje();
+    var tiempoActual = (new Date()).getTime();
+    if (tiempoActual > (ultimoClick + 5000)) {
+      clicks += 1;
+      document.getElementById("texto").innerHTML = mensaje();
+    }
+    else {
+        alert("No te saltes turnos! Juega antes de volver a apretar el botón");
+    }
+    ultimoClick = tiempoActual;
 }
