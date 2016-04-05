@@ -3,8 +3,8 @@ $(document).foundation();
 new WOW().init();
 
 // #Variables
-var turnoJugador = ["yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres", "solteros", "con pareja", "par", "impar", "risa"];
-var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago"];
+var turnoJugador = ["yo", "yo", "yo", "yo", "yo", "yo", "yo", "yo", "yo", "yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo", "todos", "hombres", "mujeres", "solteros", "con pareja", "par", "impar", "risa"];
+var accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago"];
 var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
@@ -26,18 +26,18 @@ var mensaje = function getMessage() {
 
     // Variables Acciones comunes
     if (clicks > 10) {
-        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "compañero"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago" "compañero"];
     } else if (clicks > 15) {
-        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "compañero", "shot"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago" "compañero", "shot"];
     } else if (clicks > 20) {
-        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "compañero", "shot", "piquito"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago" "compañero", "shot", "piquito"];
         numeroAccionJugador = [1, 2, 3, 4];
     } else if (clicks > 30) {
-        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "compañero", "shot", "piquito", "beso"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago" "compañero", "shot", "piquito", "beso"];
     } else if (clicks > 40) {
-        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "compañero", "shot", "piquito", "beso", "prenda"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago" "compañero", "shot", "piquito", "beso", "prenda"];
     } else if (clicks > 50) {
-        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "compañero", "shot", "piquito", "beso", "prenda", "penitencia"];
+        accionJugador = ["nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla", "trago", "trago", "trago", "trago", "trago" "compañero", "shot", "piquito", "beso", "prenda", "penitencia"];
     }
 
     var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
@@ -217,7 +217,7 @@ function cargarTexto() {
       document.getElementById("texto").innerHTML = mensaje();
     }
     else {
-        alert("No te saltes turnos! Juega antes de volver a apretar el botón");
+        alert("No te saltes turnos! Juega antes de volver a apretar el botón. Debes Tomar" + " " + valorNumeroAccionJugador + " " + "Trago" + pluralNumeroAcciones);
     }
     ultimoClick = tiempoActual;
 }
