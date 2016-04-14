@@ -9,6 +9,9 @@
 @import "../bower_components/material-design-lite/material.min.css";
 @import "../bower_components/normalize-css/normalize.css";
 
+@import "material_palette";
+@import "main";
+
 @include foundation-global-styles;
 @include foundation-grid;
 // @include foundation-flex-grid;
@@ -53,7 +56,3 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
-
-.center {
-  text-align: center;
-}
