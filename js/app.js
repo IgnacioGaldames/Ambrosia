@@ -12,10 +12,15 @@ var duracionAccion = ["turno", "siempre"];
 var decisionJugador = ["elegir", "elejido"];
 var complemento_accionJugador = ["tomar", "regalar"];
 
+var ejemplosTomar = ["(Levante el vaso y beba su contenido)", "Simplemente toma"];
+var ejemplosLimon = ["limón","paralepipedo"];
+
 var clicks = 0;
+var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
+
 
 // #Funciones
 var alerta = function getAlerta() {
@@ -60,6 +65,7 @@ var mensaje = function getMessage() {
     ];
   }
 
+    // Random vars
   var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
   var valorNumeroAccionJugador = numeroAccionJugador[Math.floor(Math.random() * numeroAccionJugador.length)];
   var valorNumeroDuracionAccionJugador = numeroDuracionAccionJugador[Math.floor(Math.random() * numeroDuracionAccionJugador.length)];
@@ -67,6 +73,9 @@ var mensaje = function getMessage() {
 
   var valorDecisionJugador = decisionJugador[Math.floor(Math.random() * decisionJugador.length)];
   var valorComplementoAccionJugador = complemento_accionJugador[Math.floor(Math.random() * complemento_accionJugador.length)];
+
+  var valorEjemplosTomar = ejemplosTomar[Math.floor(Math.random() * complemento_accionJugador.length)];
+  var valorEjemplosLimon = ejemplosLimon[Math.floor(Math.random() * complemento_accionJugador.length)];
 
   // plural Acciones
   if (valorNumeroDuracionAccionJugador > 1) {
@@ -101,7 +110,7 @@ var mensaje = function getMessage() {
   if (valorAccionJugador === "nunca") {
     textoAccionJugador = ["decir nunca nunca"];
   } else if (valorAccionJugador === "limon") {
-    textoAccionJugador = ["decir un limón medio limón"];
+    textoAccionJugador = ["decir un" + " " + valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon];
   } else if (valorAccionJugador === "dedo") {
     textoAccionJugador = ["poner un dedo sobre la mesa"];
   } else if (valorAccionJugador === "qlh") {
@@ -122,9 +131,7 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["dar un beso"];
   } else if (valorAccionJugador === "compañero") {
     textoAccionJugador = ["elegir a alguien para que sufra el mismo destino" + " " + textoValorDuracionAccion];
-  } else if (valorAccionJugador === "trago") {
-    textoAccionJugador = [conjugacionesTomar];
-  } else if (valorAccionJugador === "shot") {
+  } else if (valorAccionJugador === "trago" || valorAccionJugador === "shot") {
     textoAccionJugador = [conjugacionesTomar];
   } else if (valorAccionJugador === "prenda") {
     textoAccionJugador = ["quitarse una prenda"];
@@ -158,7 +165,7 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador === "compañero") {
     textoEjemploAccionJugador = ["(El compañero tendra que hacer lo mismo. Tomar lo mismo, cumplir las mismas reglas y todo lo demás que el juego mande)"];
   } else if (valorAccionJugador === "trago") {
-    textoEjemploAccionJugador = ["(Levante el vaso y beba su contenido)"];
+    textoEjemploAccionJugador = [valorEjemplosTomar];
   } else if (valorAccionJugador === "shot") {
     textoEjemploAccionJugador = ["(Un trago fuerte, al seco. Como un disparo)"];
   } else if (valorAccionJugador === "prenda") {
@@ -219,22 +226,45 @@ var mensaje = function getMessage() {
     icono_accionJugador = ["exclamation-circle"];
   }
 
-  var fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
+  // Markups HTML
+  fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
   var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
-  var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
 
   // Retornar valor
-  return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" + h3 + textoEjemploAccionJugador + "</h3>"];
+  return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
   valorAlert = valorNumeroDuracionAccionJugador;
 }
 
+var textoSecundario = function getTextoSecundario() {
+
+    var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
+
+    // Retornar valor
+    return [h3 + textoEjemploAccionJugador + "</h3>"];
+
+}
+
+var textoRegla = function getTextoRegla() {
+  if ( valorAccionJugador === "regla") {
+    var valorRegla = prompt("Escribe tu regla:", "Mi regla es...");
+
+  // Retornar valor
+    return ["<p>No olvides la regla:" + " "+ valorRegla + "</p>"];
+  }
+}
+
 var ultimoClick = 0;
+
+// Forzar variables
 
 function cargarTexto() {
   var tiempoActual = (new Date()).getTime();
   if (tiempoActual > (ultimoClick + 5000)) {
     clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
+    document.getElementById("texto_secundario").innerHTML = textoSecundario();
+    document.getElementById("reglas").innerHTML = textoRegla();
+
   } else {
     alert(alerta());
   }
