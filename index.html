@@ -9,27 +9,28 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 
-<body class="animated fadeIn">
+<body class="animated fadeIn"  onload="cargarTexto();">
   <div class="mdl-layout__container has-scrolling-header">
-    <div class="row">
-      <div class="large-12 large-centered center columns">
-        <h1>Juego</h1>
-
+    <div class="container mdl-shadow--2dp">
+      <div class="row principal mdl-shadow--2dp">
+        <div class="large-12 large-centered columns center">
+          <div id="texto"></div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="large-12 large-centered columns center">
-        <div id="texto"></div>
+      <div class="row secundario masked">
+        <div class="large-12 large-centered center columns">
+          <div id="texto_secundario"></div>
+            <div id="reglas"></div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="large-12 large-centered center columns">
-
-        <button onclick="cargarTexto()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      <footer>
+        <button onclick="cargarTexto();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-play">
           <i class="fa fa-play"></i> Jugar!</button>
-
-      </div>
+      </footer>
     </div>
+    <!-- End container -->
+
+
   </div>
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
