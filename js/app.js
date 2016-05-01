@@ -4,12 +4,12 @@ new WOW().init();
 
 // #Variables
 var turnoJugador = [
-  "yo", "yo", "yo", "yo", "yo", "yo", "yo", "yo", "yo", "yo",
+  "yo", "yo", "yo", "yo", "yo", "yo", "yo",
   "izquierda", "derecha", "viejo", "joven", "alto", "bajo",
   "todos", "hombres", "mujeres", "solteros", "con pareja", "par", "impar", "risa"
 ];
 var accionJugador = [
-  "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+  "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
   "trago", "trago", "trago", "trago", "trago"
 ];
 var numeroAccionJugador = [1, 2];
@@ -76,38 +76,38 @@ var mensaje = function getMessage() {
   // Variables Acciones comunes
   if (clicks > 10) {
     accionJugador = [
-      "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
        "trago", "trago", "trago", "trago", "trago",
       "compañero"
     ];
   } else if (clicks > 15) {
     accionJugador = [
-      "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
        "trago", "trago", "trago", "trago", "trago",
       "compañero", "shot"
     ];
   } else if (clicks > 20) {
     accionJugador = [
-      "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
        "trago", "trago", "trago", "trago", "trago",
       "compañero", "shot", "piquito"
     ];
     numeroAccionJugador = [1, 2, 3, 4];
   } else if (clicks > 30) {
     accionJugador = [
-      "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
        "trago", "trago", "trago", "trago", "trago",
       "compañero", "shot", "piquito", "beso"
     ];
   } else if (clicks > 40) {
     accionJugador = [
-      "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
        "trago", "trago", "trago", "trago", "trago",
       "compañero", "shot", "piquito", "beso", "prenda"
     ];
   } else if (clicks > 50) {
     accionJugador = [
-      "nunca", "limon", "dedo", "qlh", "vom", "cultura", "cascada", "historia", "regla",
+      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
        "trago", "trago", "trago", "trago", "trago",
       "compañero", "shot", "piquito", "beso", "prenda", "penitencia"
     ];
@@ -164,6 +164,7 @@ var mensaje = function getMessage() {
     valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones
   ];
 
+  console.log(accionJugador);
 
   // Oraciones acción juego
   if (valorAccionJugador === "nunca") {
@@ -172,6 +173,10 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["decir un" + " " + valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon];
   } else if (valorAccionJugador === "dedo") {
     textoAccionJugador = ["poner un dedo sobre la mesa"];
+  } else if (valorAccionJugador === "chancho") {
+    textoAccionJugador = ["inflar los pómulos"];
+  } else if (valorAccionJugador === "aob") {
+    textoAccionJugador = ["dar dos opciones a elegir"];
   } else if (valorAccionJugador === "qlh") {
     textoAccionJugador = ["inventar un escenario y que el resto apunte a quién lo haría o lo diría"];
   } else if (valorAccionJugador === "vom") {
@@ -210,7 +215,11 @@ var mensaje = function getMessage() {
        valorNumeroDuracionAccionJugador + " " + valorEjemplosLimon + pluralDuracionAcciones + "medio" + " " + valorEjemplosLimon
     ];
   } else if (valorAccionJugador === "dedo") {
-    textoEjemploAccionJugador = ["(El último en poner el dedo sobre la mesa toma)"];
+    textoEjemploAccionJugador = ["El último en poner el dedo sobre la mesa, toma"];
+  } else if (valorAccionJugador === "chancho") {
+    textoEjemploAccionJugador = ["El último en inflar los pómulos, toma"];
+  } else if (valorAccionJugador === "aob") {
+    textoEjemploAccionJugador = ["Todos eligen entre a y b y los que saquen menos votos, toman"];
   } else if (valorAccionJugador === "qlh") {
     textoEjemploAccionJugador = ["(Quién saque más votos, toma)"];
   } else if (valorAccionJugador === "vom") {
@@ -259,6 +268,9 @@ var mensaje = function getMessage() {
   } else if (valorTurnoJugador === "risa") {
     texto_turnoJugador = ["Al que se ría primero le toca"];
   }
+  else if (valorTurnoJugador) {
+    texto_turnoJugador = ["Todos toman"];
+  }
 
   // Iconos acción juego
   if (valorAccionJugador === "trago") {
@@ -300,6 +312,8 @@ var mensaje = function getMessage() {
   // Retornar valor
   return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
   valorAlert = valorNumeroDuracionAccionJugador;
+
+  console.log(accionJugador);
 }
 
 var textoSecundario = function getTextoSecundario() {
