@@ -122,10 +122,10 @@ var mensaje = function getMessage() {
   var valorDecisionJugador = decisionJugador[Math.floor(Math.random() * decisionJugador.length)];
   var valorComplementoAccionJugador = complemento_accionJugador[Math.floor(Math.random() * complemento_accionJugador.length)];
 
-  var valorEjemplosTomar = ejemplosTomar[Math.floor(Math.random() * complemento_accionJugador.length)];
-  var valorEjemplosLimon = ejemplosLimon[Math.floor(Math.random() * complemento_accionJugador.length)];
-  var valorEjemplosNunca = ejemplosNunca[Math.floor(Math.random() * complemento_accionJugador.length)];
-  var valorEjemplosCultura = ejemplosCultura[Math.floor(Math.random() * complemento_accionJugador.length)];
+  var valorEjemplosTomar = ejemplosTomar[Math.floor(Math.random() * ejemplosTomar.length)];
+  var valorEjemplosLimon = ejemplosLimon[Math.floor(Math.random() * ejemplosLimon.length)];
+  var valorEjemplosNunca = ejemplosNunca[Math.floor(Math.random() * ejemplosNunca.length)];
+  var valorEjemplosCultura = ejemplosCultura[Math.floor(Math.random() * ejemplosCultura.length)];
 
   // plural Acciones
   if (valorNumeroDuracionAccionJugador > 1) {
@@ -164,8 +164,6 @@ var mensaje = function getMessage() {
     valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones
   ];
 
-  console.log(accionJugador);
-
   // Oraciones acción juego
   if (valorAccionJugador === "nunca") {
     textoAccionJugador = ["decir nunca nunca"];
@@ -201,6 +199,8 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["quitarse una prenda"];
   } else if (valorAccionJugador === "penitencia") {
     textoAccionJugador = ["cumplir una penitencia"];
+  } else if (valorAccionJugador) {
+    textoAccionJugador = ["todos toman"];
   }
 
   // Ejemplos acción juego
@@ -248,6 +248,8 @@ var mensaje = function getMessage() {
     textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
   } else if (valorAccionJugador === "penitencia") {
     textoEjemploAccionJugador = ["(hacer lo que le pidan que haga)"];
+  } else if (valorAccionJugador) {
+    textoEjemploAccionJugador = ["todos toman"];
   }
 
   // Variables turno jugador
@@ -281,6 +283,10 @@ var mensaje = function getMessage() {
     icono_accionJugador = ["lemon-o"];
   } else if (valorAccionJugador === "dedo") {
     icono_accionJugador = ["hand-o-down"];
+  } else if (valorAccionJugador === "chancho") {
+    icono_accionJugador = ["hand-o-down"];
+  } else if (valorAccionJugador === "aob") {
+    icono_accionJugador = ["fa-adjust"];
   } else if (valorAccionJugador === "regla") {
     icono_accionJugador = ["gavel"];
   } else if (valorAccionJugador === "qlh") {
@@ -303,17 +309,19 @@ var mensaje = function getMessage() {
     icono_accionJugador = ["shopping-bag"];
   } else if (valorAccionJugador === "penitencia") {
     icono_accionJugador = ["exclamation-circle"];
+  } else if (valorAccionJugador) {
+    icono_accionJugador = ["beer"];
   }
 
   // Markups HTML
   fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
   var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
 
+  console.log(valorEjemplosTomar);
+
   // Retornar valor
   return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
   valorAlert = valorNumeroDuracionAccionJugador;
-
-  console.log(accionJugador);
 }
 
 var textoSecundario = function getTextoSecundario() {
@@ -347,7 +355,6 @@ function cargarTexto() {
     document.getElementById("texto").innerHTML = mensaje();
     document.getElementById("texto_secundario").innerHTML = textoSecundario();
     document.getElementById("reglas").innerHTML = textoRegla();
-
   } else {
     alert(alerta());
   }
