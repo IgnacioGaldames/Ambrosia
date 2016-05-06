@@ -25,6 +25,11 @@ var ejemplosTomar = [
   "Voh, dale",
   "1,2,3: TOMA",
   "Alzad vuestra copa y bebed",
+  "Siganme los buenos",
+  "Al abordaje, mis muchanchos",
+  "Si alguien lee esto, por favor envíe ayuda",
+  "01110100 01101111 01101101 01100001",
+  "Jesús convertiría el agua en vino si estuviera en tu lugar",
 ];
 var ejemplosLimon = [
   "limón",
@@ -46,6 +51,10 @@ var ejemplosCultura = [
   "Colores primarios",
   "Números entre el 1 y el 5",
   "Nombres de animales",
+];
+var ejemplosReglas= [
+  "Evitar que alguien haga algo",
+  "Forzar a que alguien haga algo",
 ];
 var clicks = 0;
 var ultimoClick = 0;
@@ -126,6 +135,7 @@ var mensaje = function getMessage() {
   var valorEjemplosLimon = ejemplosLimon[Math.floor(Math.random() * ejemplosLimon.length)];
   var valorEjemplosNunca = ejemplosNunca[Math.floor(Math.random() * ejemplosNunca.length)];
   var valorEjemplosCultura = ejemplosCultura[Math.floor(Math.random() * ejemplosCultura.length)];
+  var valorEjemplosReglas = ejemplosReglas[Math.floor(Math.random() * ejemplosReglas.length)];
 
   // plural Acciones
   if (valorNumeroDuracionAccionJugador > 1) {
@@ -163,6 +173,16 @@ var mensaje = function getMessage() {
     valorComplementoAccionJugador + " " +
     valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones
   ];
+//forzar plurales a trago y shot
+  if (valorTurnoJugador === "todos" ||
+      valorTurnoJugador === "hombres" ||
+      valorTurnoJugador === "mujeres" ||
+      valorTurnoJugador === "solteros" ||
+      valorTurnoJugador === "en pareja" ||
+      valorTurnoJugador === "par" ||
+      valorTurnoJugador === "impar" ) {
+    valorAccionJugador = "trago", "shot";
+  }
 
   // Oraciones acción juego
   if (valorAccionJugador === "nunca") {
@@ -199,8 +219,6 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["quitarse una prenda"];
   } else if (valorAccionJugador === "penitencia") {
     textoAccionJugador = ["cumplir una penitencia"];
-  } else if (valorAccionJugador) {
-    textoAccionJugador = ["todos toman"];
   }
 
   // Ejemplos acción juego
@@ -233,7 +251,7 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador === "historia") {
     textoEjemploAccionJugador = ["(Dice un palabra y el resto la repite, añadiendo su propia palabra)"];
   } else if (valorAccionJugador === "regla") {
-    textoEjemploAccionJugador = ["(Una regla ingeniosa y atrevida)"];
+    textoEjemploAccionJugador = ["Como por ejemplo:" + " " + valorEjemplosReglas];
   } else if (valorAccionJugador === "piquito") {
     textoEjemploAccionJugador = ["(dar un pequeño beso en los labios)"];
   } else if (valorAccionJugador === "beso") {
@@ -248,8 +266,6 @@ var mensaje = function getMessage() {
     textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
   } else if (valorAccionJugador === "penitencia") {
     textoEjemploAccionJugador = ["(hacer lo que le pidan que haga)"];
-  } else if (valorAccionJugador) {
-    textoEjemploAccionJugador = ["todos toman"];
   }
 
   // Variables turno jugador
@@ -269,9 +285,6 @@ var mensaje = function getMessage() {
     texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + " " + "les toca"];
   } else if (valorTurnoJugador === "risa") {
     texto_turnoJugador = ["Al que se ría primero le toca"];
-  }
-  else if (valorTurnoJugador) {
-    texto_turnoJugador = ["Todos toman"];
   }
 
   // Iconos acción juego
@@ -312,18 +325,17 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador) {
     icono_accionJugador = ["beer"];
   }
+  console.log(valorAccionJugador);
+  console.log(valorTurnoJugador);
 
   // Markups HTML
   fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
   var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
 
-  console.log(valorEjemplosTomar);
-
   // Retornar valor
   return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
   valorAlert = valorNumeroDuracionAccionJugador;
 }
-
 var textoSecundario = function getTextoSecundario() {
 
     var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
