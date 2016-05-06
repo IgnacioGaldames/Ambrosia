@@ -165,6 +165,8 @@ var mensaje = function getMessage() {
       valorTurnoJugador === "solteros" ||
       valorTurnoJugador === "en pareja") {
     pluralJugadores = ["s"];
+    valorAccionJugador = "trago", "shot";
+
   } else {
     pluralJugadores = [" "];
   }
@@ -173,16 +175,7 @@ var mensaje = function getMessage() {
     valorComplementoAccionJugador + " " +
     valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones
   ];
-//forzar plurales a trago y shot
-  if (valorTurnoJugador === "todos" ||
-      valorTurnoJugador === "hombres" ||
-      valorTurnoJugador === "mujeres" ||
-      valorTurnoJugador === "solteros" ||
-      valorTurnoJugador === "en pareja" ||
-      valorTurnoJugador === "par" ||
-      valorTurnoJugador === "impar" ) {
-    valorAccionJugador = "trago", "shot";
-  }
+
 
   // Oraciones acción juego
   if (valorAccionJugador === "nunca") {
