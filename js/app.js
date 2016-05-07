@@ -4,13 +4,11 @@ new WOW().init();
 
 // #Variables
 var turnoJugador = [
-  "yo", "yo", "yo", "yo", "yo", "yo", "yo",
-  "izquierda", "derecha", "viejo", "joven", "alto", "bajo",
-  "todos", "hombres", "mujeres", "solteros", "con pareja", "par", "impar", "risa"
+  "yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo",
+  "todos", "hombres", "mujeres", "solteros", "pareja", "par", "impar", "risa"
 ];
 var accionJugador = [
-  "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-  "trago", "trago", "trago", "trago", "trago"
+  "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"
 ];
 var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
@@ -65,6 +63,8 @@ var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
 
 // #Funciones
+
+// #getAlerta
 var alerta = function getAlerta() {
   var numeroAlerta = numeroDuracionAccionJugador[Math.floor(Math.random() * numeroDuracionAccionJugador.length)];
   if (numeroAlerta > 1) {
@@ -77,6 +77,8 @@ var alerta = function getAlerta() {
     numeroAlerta + " " + "Trago" + pluralNumeroAlerta
   ];
 }
+
+// #getMessage
 var mensaje = function getMessage() {
 
   // Random vars
@@ -84,44 +86,29 @@ var mensaje = function getMessage() {
 
   // Variables Acciones comunes
   if (clicks > 10) {
-    accionJugador = [
-      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-       "trago", "trago", "trago", "trago", "trago",
-      "compañero"
-    ];
+    accionJugador = [ accionJugador + "compañero" ];
   } else if (clicks > 15) {
-    accionJugador = [
-      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-       "trago", "trago", "trago", "trago", "trago",
-      "compañero", "shot"
-    ];
+    accionJugador = [ accionJugador + "shot" ];
   } else if (clicks > 20) {
-    accionJugador = [
-      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-       "trago", "trago", "trago", "trago", "trago",
-      "compañero", "shot", "piquito"
-    ];
+    accionJugador = [ accionJugador + "piquito" ];
     numeroAccionJugador = [1, 2, 3, 4];
   } else if (clicks > 30) {
-    accionJugador = [
-      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-       "trago", "trago", "trago", "trago", "trago",
-      "compañero", "shot", "piquito", "beso"
-    ];
+    accionJugador = [ accionJugador + "beso" ];
   } else if (clicks > 40) {
-    accionJugador = [
-      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-       "trago", "trago", "trago", "trago", "trago",
-      "compañero", "shot", "piquito", "beso", "prenda"
-    ];
+    accionJugador = [ accionJugador + "prenda" ];
   } else if (clicks > 50) {
-    accionJugador = [
-      "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla",
-       "trago", "trago", "trago", "trago", "trago",
-      "compañero", "shot", "piquito", "beso", "prenda", "penitencia"
-    ];
+    accionJugador = [ accionJugador + "penitencia" ];
   }
-
+  // Variables PLurales
+  if (valorTurnoJugador === "todos" ||
+      valorTurnoJugador === "hombres" ||
+      valorTurnoJugador === "mujeres" ||
+      valorTurnoJugador === "solteros" ||
+      valorTurnoJugador === "pareja" ||
+      valorTurnoJugador === "par" ||
+      valorTurnoJugador === "impar") {
+    accionJugador = ["trago"];
+  }
     // Random vars
   var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
   var valorNumeroAccionJugador = numeroAccionJugador[Math.floor(Math.random() * numeroAccionJugador.length)];
@@ -163,9 +150,8 @@ var mensaje = function getMessage() {
       valorTurnoJugador === "hombres" ||
       valorTurnoJugador === "mujeres" ||
       valorTurnoJugador === "solteros" ||
-      valorTurnoJugador === "en pareja") {
+      valorTurnoJugador === "pareja") {
     pluralJugadores = ["s"];
-    valorAccionJugador = "trago", "shot";
 
   } else {
     pluralJugadores = [" "];
@@ -175,7 +161,6 @@ var mensaje = function getMessage() {
     valorComplementoAccionJugador + " " +
     valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones
   ];
-
 
   // Oraciones acción juego
   if (valorAccionJugador === "nunca") {
@@ -200,6 +185,7 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["empezar una historia"];
   } else if (valorAccionJugador === "regla") {
     textoAccionJugador = ["crear una regla"];
+    //var regla = prompt("Cuál es la nueva regla?");
   } else if (valorAccionJugador === "piquito") {
     textoAccionJugador = ["dar un piquito"];
   } else if (valorAccionJugador === "beso") {
@@ -223,7 +209,7 @@ var mensaje = function getMessage() {
     textoEjemploAccionJugador = [
       "Todos se enumeran. El primero debe decir un" + " " +
        valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon + " " +
-       valorNumeroDuracionAccionJugador + " " + valorEjemplosLimon + pluralDuracionAcciones + "medio" + " " + valorEjemplosLimon
+       valorNumeroDuracionAccionJugador + " " + valorEjemplosLimon + pluralDuracionAcciones + + " " + "medio" + " " + valorEjemplosLimon
     ];
   } else if (valorAccionJugador === "dedo") {
     textoEjemploAccionJugador = ["El último en poner el dedo sobre la mesa, toma"];
@@ -268,7 +254,7 @@ var mensaje = function getMessage() {
     texto_turnoJugador = ["Al de mi" + conjugar];
   } else if (valorTurnoJugador === "todos") {
     texto_turnoJugador = ["A" + conjugar];
-  } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
+  } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "pareja") {
     texto_turnoJugador = ["A los" + conjugar];
   } else if (valorTurnoJugador === "mujeres") {
     texto_turnoJugador = ["A las" + conjugar];
@@ -278,6 +264,8 @@ var mensaje = function getMessage() {
     texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + " " + "les toca"];
   } else if (valorTurnoJugador === "risa") {
     texto_turnoJugador = ["Al que se ría primero le toca"];
+  } else if (valorTurnoJugador) {
+    texto_turnoJugador = ["Valor Turno jugador not found"];
   }
 
   // Iconos acción juego
@@ -329,37 +317,20 @@ var mensaje = function getMessage() {
   return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
   valorAlert = valorNumeroDuracionAccionJugador;
 }
+// #textoSecundario
 var textoSecundario = function getTextoSecundario() {
-
     var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
 
     // Retornar valor
     return [h3 + textoEjemploAccionJugador + "</h3>"];
-
 }
-
-var textoRegla = function getTextoRegla() {
-  if ( valorAccionJugador === "regla") {
-    var valorRegla = prompt("Escribe tu regla:", "Mi regla es...");
-
-  // Retornar valor
-    return ["<p>No olvides la regla:" + " "+ valorRegla + "</p>"];
-  }
-  else {
-    return [];
-  }
-}
-
-// Forzar variables
-valorAccionJugador = ["limon"];
-
+// #cargarTexto
 function cargarTexto() {
   var tiempoActual = (new Date()).getTime();
   if (tiempoActual > (ultimoClick + 5000)) {
     clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
     document.getElementById("texto_secundario").innerHTML = textoSecundario();
-    document.getElementById("reglas").innerHTML = textoRegla();
   } else {
     alert(alerta());
   }
