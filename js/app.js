@@ -5,11 +5,9 @@ new WOW().init();
 // #Variables
 var turnoJugador = [
   "yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo",
-  "todos", "hombres", "mujeres", "solteros", "pareja", "par", "impar", "risa"
+  "todos", "hombres", "mujeres", "solteros", "en pareja", "par", "impar", "risa"
 ];
-var accionJugador = [
-  "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"
-];
+
 var numeroAccionJugador = [1, 2];
 var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
 var duracionAccion = ["turno", "siempre"];
@@ -28,6 +26,7 @@ var ejemplosTomar = [
   "Si alguien lee esto, por favor envíe ayuda",
   "01110100 01101111 01101101 01100001",
   "Jesús convertiría el agua en vino si estuviera en tu lugar",
+  "Yo sé cosas y bebo. Pero la mayoría del tiempo solo sé que bebo."
 ];
 var ejemplosLimon = [
   "limón",
@@ -52,7 +51,7 @@ var ejemplosCultura = [
 ];
 var ejemplosReglas= [
   "Evitar que alguien haga algo",
-  "Forzar a que alguien haga algo",
+  "Invitar a que alguien haga algo",
 ];
 var clicks = 0;
 var ultimoClick = 0;
@@ -84,31 +83,40 @@ var mensaje = function getMessage() {
   // Random vars
   var valorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
 
-  // Variables Acciones comunes
-  if (clicks > 10) {
-    accionJugador = [ accionJugador + "compañero" ];
-  } else if (clicks > 15) {
-    accionJugador = [ accionJugador + "shot" ];
-  } else if (clicks > 20) {
-    accionJugador = [ accionJugador + "piquito" ];
-    numeroAccionJugador = [1, 2, 3, 4];
-  } else if (clicks > 30) {
-    accionJugador = [ accionJugador + "beso" ];
-  } else if (clicks > 40) {
-    accionJugador = [ accionJugador + "prenda" ];
-  } else if (clicks > 50) {
-    accionJugador = [ accionJugador + "penitencia" ];
-  }
+
   // Variables PLurales
   if (valorTurnoJugador === "todos" ||
       valorTurnoJugador === "hombres" ||
       valorTurnoJugador === "mujeres" ||
       valorTurnoJugador === "solteros" ||
-      valorTurnoJugador === "pareja" ||
+      valorTurnoJugador === "en pareja" ||
       valorTurnoJugador === "par" ||
       valorTurnoJugador === "impar") {
     accionJugador = ["trago"];
   }
+  else if (valorTurnoJugador) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"
+    ];
+  }
+
+  // Sumar acciones
+/*  if (clicks == 5) {
+    accionJugador.push("compañero");
+  } else if (clicks == 10) {
+    accionJugador.push("shot");
+  } else if (clicks == 15) {
+    accionJugador.push("piquito");
+    numeroAccionJugador == [1, 2, 3, 4];
+  } else if (clicks == 20) {
+    accionJugador.push("beso");
+  } else if (clicks == 25) {
+    accionJugador.push("prenda");
+  } else if (clicks == 30) {
+    accionJugador.push("penitencia");
+  }
+  */
+
     // Random vars
   var valorAccionJugador = accionJugador[Math.floor(Math.random() * accionJugador.length)];
   var valorNumeroAccionJugador = numeroAccionJugador[Math.floor(Math.random() * numeroAccionJugador.length)];
@@ -150,7 +158,7 @@ var mensaje = function getMessage() {
       valorTurnoJugador === "hombres" ||
       valorTurnoJugador === "mujeres" ||
       valorTurnoJugador === "solteros" ||
-      valorTurnoJugador === "pareja") {
+      valorTurnoJugador === "en pareja") {
     pluralJugadores = ["s"];
 
   } else {
@@ -163,6 +171,7 @@ var mensaje = function getMessage() {
   ];
 
   // Oraciones acción juego
+
   if (valorAccionJugador === "nunca") {
     textoAccionJugador = ["decir nunca nunca"];
   } else if (valorAccionJugador === "limon") {
@@ -185,7 +194,6 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["empezar una historia"];
   } else if (valorAccionJugador === "regla") {
     textoAccionJugador = ["crear una regla"];
-    //var regla = prompt("Cuál es la nueva regla?");
   } else if (valorAccionJugador === "piquito") {
     textoAccionJugador = ["dar un piquito"];
   } else if (valorAccionJugador === "beso") {
@@ -209,7 +217,7 @@ var mensaje = function getMessage() {
     textoEjemploAccionJugador = [
       "Todos se enumeran. El primero debe decir un" + " " +
        valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon + " " +
-       valorNumeroDuracionAccionJugador + " " + valorEjemplosLimon + pluralDuracionAcciones + + " " + "medio" + " " + valorEjemplosLimon
+       valorNumeroDuracionAccionJugador + " " + valorEjemplosLimon + pluralDuracionAcciones + " " + "medio" + " " + valorEjemplosLimon
     ];
   } else if (valorAccionJugador === "dedo") {
     textoEjemploAccionJugador = ["El último en poner el dedo sobre la mesa, toma"];
@@ -254,7 +262,7 @@ var mensaje = function getMessage() {
     texto_turnoJugador = ["Al de mi" + conjugar];
   } else if (valorTurnoJugador === "todos") {
     texto_turnoJugador = ["A" + conjugar];
-  } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "pareja") {
+  } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
     texto_turnoJugador = ["A los" + conjugar];
   } else if (valorTurnoJugador === "mujeres") {
     texto_turnoJugador = ["A las" + conjugar];
@@ -306,15 +314,17 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador) {
     icono_accionJugador = ["beer"];
   }
+  console.log(accionJugador);
   console.log(valorAccionJugador);
   console.log(valorTurnoJugador);
+  console.log(clicks);
 
   // Markups HTML
   fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
   var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
 
   // Retornar valor
-  return [h1 + fontAwesome + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
+  return [h1 + fontAwesome + "<br>" + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
   valorAlert = valorNumeroDuracionAccionJugador;
 }
 // #textoSecundario
@@ -327,7 +337,7 @@ var textoSecundario = function getTextoSecundario() {
 // #cargarTexto
 function cargarTexto() {
   var tiempoActual = (new Date()).getTime();
-  if (tiempoActual > (ultimoClick + 5000)) {
+  if (tiempoActual > (ultimoClick + 0)) {
     clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
     document.getElementById("texto_secundario").innerHTML = textoSecundario();
