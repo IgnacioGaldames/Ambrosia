@@ -57,6 +57,7 @@ var clicks = 0;
 var ultimoClick = 0;
 var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
+var accionJugador = ["trago"];
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
 
@@ -92,11 +93,44 @@ var mensaje = function getMessage() {
       valorTurnoJugador === "en pareja" ||
       valorTurnoJugador === "par" ||
       valorTurnoJugador === "impar") {
-    accionJugador = ["trago"];
+    var accionJugador = ["trago"];
   }
-  else if (valorTurnoJugador) {
+  else if (valorTurnoJugador && clicks <= 5) {
     var accionJugador = [
       "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"
+    ];
+  }
+  else if (valorTurnoJugador && clicks > 5 && clicks <= 10) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla", "compañero"
+    ];
+  }
+  else if (valorTurnoJugador && clicks > 10 && clicks <= 15) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla", "compañero", "shot"
+    ];
+  }
+  else if (valorTurnoJugador && clicks > 15 && clicks <= 20) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito"
+    ];
+  }
+  else if (valorTurnoJugador && clicks > 20 && clicks <= 25) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom",
+      "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito", "beso"
+    ];
+  }
+  else if (valorTurnoJugador && clicks > 25 && clicks <= 30) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom",
+      "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito", "beso", "prenda"
+    ];
+  }
+  else if (valorTurnoJugador && clicks > 30) {
+    var accionJugador = [
+      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom",
+      "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito", "beso", "prenda", "penitencia"
     ];
   }
 
@@ -114,6 +148,23 @@ var mensaje = function getMessage() {
     accionJugador.push("prenda");
   } else if (clicks == 30) {
     accionJugador.push("penitencia");
+  }
+  */
+
+  /*
+  if (clicks >= 5) {
+    accionJugador.push("compañero");
+  } else if (clicks >= 10) {
+    accionJugador.push("compañero","shot");
+  } else if (clicks >= 15) {
+    accionJugador.push("compañero","shot","piquito");
+    numeroAccionJugador >= [1, 2, 3, 4];
+  } else if (clicks >= 20) {
+    accionJugador.push("compañero","shot","piquito","beso");
+  } else if (clicks >= 25) {
+    accionJugador.push("compañero","shot","piquito","beso","prenda");
+  } else if (clicks >= 30) {
+    accionJugador.push("compañero","shot","piquito","beso","prenda","penitencia");
   }
   */
 
