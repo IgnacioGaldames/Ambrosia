@@ -53,11 +53,14 @@ var ejemplosReglas= [
   "Evitar que alguien haga algo",
   "Invitar a que alguien haga algo",
 ];
+
+var baseAccionJugador = ["nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
+var accionJugador = ["trago"];
+
 var clicks = 0;
 var ultimoClick = 0;
 var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
-var accionJugador = ["trago"];
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
 
@@ -84,7 +87,6 @@ var mensaje = function getMessage() {
   // Random vars
   var valorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
 
-
   // Variables PLurales
   if (valorTurnoJugador === "todos" ||
       valorTurnoJugador === "hombres" ||
@@ -96,42 +98,31 @@ var mensaje = function getMessage() {
     var accionJugador = ["trago"];
   }
   else if (valorTurnoJugador && clicks <= 5) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"
-    ];
+    var accionJugador = baseAccionJugador;
   }
   else if (valorTurnoJugador && clicks > 5 && clicks <= 10) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla", "compañero"
-    ];
+    var accionJugador =
+      baseAccionJugador.concat("compañero");
   }
   else if (valorTurnoJugador && clicks > 10 && clicks <= 15) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla", "compañero", "shot"
-    ];
+    var accionJugador =
+      baseAccionJugador.concat("compañero", "shot");
   }
   else if (valorTurnoJugador && clicks > 15 && clicks <= 20) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito"
-    ];
+    var accionJugador =
+      baseAccionJugador.concat("compañero", "shot", "piquito");
   }
   else if (valorTurnoJugador && clicks > 20 && clicks <= 25) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom",
-      "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito", "beso"
-    ];
+    var accionJugador =
+      baseAccionJugador.concat("compañero", "shot", "piquito", "beso");
   }
   else if (valorTurnoJugador && clicks > 25 && clicks <= 30) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom",
-      "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito", "beso", "prenda"
-    ];
+    var accionJugador =
+      baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda");
   }
   else if (valorTurnoJugador && clicks > 30) {
-    var accionJugador = [
-      "trago", "nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom",
-      "cultura", "cascada", "historia", "regla", "compañero", "shot", "piquito", "beso", "prenda", "penitencia"
-    ];
+    var accionJugador =
+      baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda", "penitencia");
   }
 
   // Sumar acciones
