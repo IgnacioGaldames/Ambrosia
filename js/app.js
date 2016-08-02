@@ -63,7 +63,10 @@ var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
-
+// IDEA: si sale beso o piquito, que diga a quién O salga una brujula, como la botella.
+// IDEA: llama a las usuarios por nombre.
+// IDEA: los usuarios inician sesión en la misma red con facebook, luego los llama.
+// IDEA: si es prenda se puede quitar o quitarse.
 
 // #Funciones
 
@@ -379,7 +382,7 @@ var textoSecundario = function getTextoSecundario() {
 // #cargarTexto
 function cargarTexto() {
   var tiempoActual = (new Date()).getTime();
-  if (tiempoActual > (ultimoClick + 0)) {
+  if (tiempoActual > (ultimoClick + 300)) {
     clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
     document.getElementById("texto_secundario").innerHTML = textoSecundario();
