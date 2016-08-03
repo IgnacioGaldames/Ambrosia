@@ -55,7 +55,7 @@ var ejemplosReglas= [
 ];
 
 var baseAccionJugador = ["nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
-var accionJugador = ["trago"];
+var baseAccionJugadores = ["trago"];
 
 var clicks = 0;
 var ultimoClick = 0;
@@ -63,7 +63,10 @@ var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
-
+// IDEA: si sale beso o piquito, que diga a quién O salga una brujula, como la botella.
+// IDEA: llama a las usuarios por nombre.
+// IDEA: los usuarios inician sesión en la misma red con facebook, luego los llama.
+// IDEA: si es prenda se puede quitar o quitarse.
 
 // #Funciones
 
@@ -86,43 +89,92 @@ var mensaje = function getMessage() {
 
   // Random vars
   var valorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
-
+  var complementoValorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
   // Variables PLurales
-  if (valorTurnoJugador === "todos" ||
-      valorTurnoJugador === "hombres" ||
-      valorTurnoJugador === "mujeres" ||
-      valorTurnoJugador === "solteros" ||
-      valorTurnoJugador === "en pareja" ||
-      valorTurnoJugador === "par" ||
-      valorTurnoJugador === "impar") {
-    var accionJugador = ["trago"];
+  if (valorTurnoJugador === "todos" && clicks <= 5 ||
+      valorTurnoJugador === "hombres" && clicks <= 5 ||
+      valorTurnoJugador === "mujeres" && clicks <= 5 ||
+      valorTurnoJugador === "solteros" && clicks <= 5 ||
+      valorTurnoJugador === "en pareja" && clicks <= 5 ||
+      valorTurnoJugador === "par" && clicks <= 5 ||
+      valorTurnoJugador === "impar" && clicks <= 5) {
+    var accionJugador = baseAccionJugadores;
   }
   else if (valorTurnoJugador && clicks <= 5) {
     var accionJugador = baseAccionJugador;
   }
+  else if (valorTurnoJugador === "todos" && clicks > 5 && clicks <= 10 ||
+      valorTurnoJugador === "hombres" && clicks > 5 && clicks <= 10 ||
+      valorTurnoJugador === "mujeres" && clicks > 5 && clicks <= 10 ||
+      valorTurnoJugador === "solteros" && clicks > 5 && clicks <= 10 ||
+      valorTurnoJugador === "en pareja" && clicks > 5 && clicks <= 10 ||
+      valorTurnoJugador === "par" && clicks > 5 && clicks <= 10 ||
+      valorTurnoJugador === "impar" && clicks > 5 && clicks <= 10) {
+    var accionJugador = baseAccionJugadores.concat("compañero");
+  }
   else if (valorTurnoJugador && clicks > 5 && clicks <= 10) {
-    var accionJugador =
-      baseAccionJugador.concat("compañero");
+    var accionJugador = baseAccionJugador.concat("compañero");
+  }
+  else if (valorTurnoJugador === "todos" && clicks > 10 && clicks <= 15 ||
+      valorTurnoJugador === "hombres" && clicks > 10 && clicks <= 15 ||
+      valorTurnoJugador === "mujeres" && clicks > 10 && clicks <= 15 ||
+      valorTurnoJugador === "solteros" && clicks > 10 && clicks <= 15 ||
+      valorTurnoJugador === "en pareja" && clicks > 10 && clicks <= 15 ||
+      valorTurnoJugador === "par" && clicks > 10 && clicks <= 15 ||
+      valorTurnoJugador === "impar" && clicks > 10 && clicks <= 15) {
+    var accionJugador = baseAccionJugadores.concat("compañero", "shot");
   }
   else if (valorTurnoJugador && clicks > 10 && clicks <= 15) {
-    var accionJugador =
-      baseAccionJugador.concat("compañero", "shot");
+    var accionJugador = baseAccionJugador.concat("compañero", "shot");
+
+  }
+  else if (valorTurnoJugador === "todos" && clicks > 15 && clicks <= 20 ||
+      valorTurnoJugador === "hombres" && clicks > 15 && clicks <= 20 ||
+      valorTurnoJugador === "mujeres" && clicks > 15 && clicks <= 20 ||
+      valorTurnoJugador === "solteros" && clicks > 15 && clicks <= 20 ||
+      valorTurnoJugador === "en pareja" && clicks > 15 && clicks <= 20 ||
+      valorTurnoJugador === "par" && clicks > 15 && clicks <= 20 ||
+      valorTurnoJugador === "impar" && clicks > 15 && clicks <= 20) {
+    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito");
   }
   else if (valorTurnoJugador && clicks > 15 && clicks <= 20) {
-    var accionJugador =
-      baseAccionJugador.concat("compañero", "shot", "piquito");
+    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito");
+  }
+  else if (valorTurnoJugador === "todos" && clicks > 20 && clicks <= 25 ||
+      valorTurnoJugador === "hombres" && clicks > 20 && clicks <= 25 ||
+      valorTurnoJugador === "mujeres" && clicks > 20 && clicks <= 25 ||
+      valorTurnoJugador === "solteros" && clicks > 20 && clicks <= 25 ||
+      valorTurnoJugador === "en pareja" && clicks > 20 && clicks <= 25 ||
+      valorTurnoJugador === "par" && clicks > 20 && clicks <= 25 ||
+      valorTurnoJugador === "impar" && clicks > 20 && clicks <= 25) {
+    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito", "beso");
   }
   else if (valorTurnoJugador && clicks > 20 && clicks <= 25) {
-    var accionJugador =
-      baseAccionJugador.concat("compañero", "shot", "piquito", "beso");
+    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito", "beso");
+  }
+  else if (valorTurnoJugador === "todos" && clicks > 25 && clicks <= 30 ||
+      valorTurnoJugador === "hombres" && clicks > 25 && clicks <= 30 ||
+      valorTurnoJugador === "mujeres" && clicks > 25 && clicks <= 30 ||
+      valorTurnoJugador === "solteros" && clicks > 25 && clicks <= 30 ||
+      valorTurnoJugador === "en pareja" && clicks > 25 && clicks <= 30 ||
+      valorTurnoJugador === "par" && clicks > 25 && clicks <= 30 ||
+      valorTurnoJugador === "impar" && clicks > 25 && clicks <= 30) {
+    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito", "beso", "prenda");
   }
   else if (valorTurnoJugador && clicks > 25 && clicks <= 30) {
-    var accionJugador =
-      baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda");
+    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda");
+  }
+  else if (valorTurnoJugador === "todos" && clicks > 30 ||
+      valorTurnoJugador === "hombres" && clicks > 30 ||
+      valorTurnoJugador === "mujeres" && clicks > 30 ||
+      valorTurnoJugador === "solteros" && clicks > 30 ||
+      valorTurnoJugador === "en pareja" && clicks > 30 ||
+      valorTurnoJugador === "par" && clicks > 30 ||
+      valorTurnoJugador === "impar" && clicks > 30) {
+    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito", "beso", "prenda", "penitencia");
   }
   else if (valorTurnoJugador && clicks > 30) {
-    var accionJugador =
-      baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda", "penitencia");
+    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda", "penitencia");
   }
 
   // Sumar acciones
@@ -201,7 +253,7 @@ var mensaje = function getMessage() {
       valorTurnoJugador === "mujeres" ||
       valorTurnoJugador === "solteros" ||
       valorTurnoJugador === "en pareja") {
-    pluralJugadores = ["s"];
+    pluralJugadores = ["s "];
 
   } else {
     pluralJugadores = [" "];
@@ -210,6 +262,32 @@ var mensaje = function getMessage() {
   var conjugacionesTomar = [
     valorComplementoAccionJugador + " " +
     valorNumeroAccionJugador + " " + valorAccionJugador + pluralNumeroAcciones
+  ];
+
+  //Conjugaciones besar
+
+  if (complementoValorTurnoJugador === "yo") {
+    texto_ComplementoTurnoJugador = ["a mi"];
+  } else if (complementoValorTurnoJugador === "izquierda" || complementoValorTurnoJugador === "derecha") {
+    texto_ComplementoTurnoJugador = ["al de su" + complementoValorTurnoJugador];
+  } else if (complementoValorTurnoJugador === "todos") {
+    texto_ComplementoTurnoJugador = ["a quién quiera"];
+  } else if (complementoValorTurnoJugador === "hombres" || complementoValorTurnoJugador === "solteros" || complementoValorTurnoJugador === "en pareja") {
+    texto_ComplementoTurnoJugador = ["a los" + " " + complementoValorTurnoJugador];
+  } else if (complementoValorTurnoJugador === "mujeres") {
+    texto_ComplementoTurnoJugador = ["a las" +  " " + complementoValorTurnoJugador];
+  } else if (complementoValorTurnoJugador === "viejo" || complementoValorTurnoJugador === "joven" || complementoValorTurnoJugador === "alto" || complementoValorTurnoJugador === "bajo") {
+    texto_ComplementoTurnoJugador = ["al más" +  " " + complementoValorTurnoJugador];
+  } else if (complementoValorTurnoJugador === "par" || complementoValorTurnoJugador === "impar") {
+    texto_ComplementoTurnoJugador = ["a los nacidos en un año" + " " + complementoValorTurnoJugador];
+  } else if (complementoValorTurnoJugador === "risa") {
+    texto_ComplementoTurnoJugador = ["al que se ría primero"];
+  } else if (complementoValorTurnoJugador) {
+    texto_ComplementoTurnoJugador = ["Valor Turno jugador not found"];
+  }
+
+  var conjugacionesBesar = [
+    "dar un" + " " + valorAccionJugador + " " + texto_ComplementoTurnoJugador
   ];
 
   // Oraciones acción juego
@@ -236,10 +314,8 @@ var mensaje = function getMessage() {
     textoAccionJugador = ["empezar una historia"];
   } else if (valorAccionJugador === "regla") {
     textoAccionJugador = ["crear una regla"];
-  } else if (valorAccionJugador === "piquito") {
-    textoAccionJugador = ["dar un piquito"];
-  } else if (valorAccionJugador === "beso") {
-    textoAccionJugador = ["dar un beso"];
+  } else if (valorAccionJugador === "beso" || valorAccionJugador === "piquito") {
+    textoAccionJugador = [conjugacionesBesar];
   } else if (valorAccionJugador === "compañero") {
     textoAccionJugador = ["elegir a alguien para que sufra el mismo destino" + " " + textoValorDuracionAccion];
   } else if (valorAccionJugador === "trago" || valorAccionJugador === "shot") {
@@ -379,7 +455,7 @@ var textoSecundario = function getTextoSecundario() {
 // #cargarTexto
 function cargarTexto() {
   var tiempoActual = (new Date()).getTime();
-  if (tiempoActual > (ultimoClick + 0)) {
+  if (tiempoActual > (ultimoClick + 1)) {
     clicks += 1;
     document.getElementById("texto").innerHTML = mensaje();
     document.getElementById("texto_secundario").innerHTML = textoSecundario();
