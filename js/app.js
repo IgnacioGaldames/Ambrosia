@@ -56,10 +56,25 @@ var ejemplosReglas= [
 
 var baseAccionJugador = ["nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
 var baseAccionJugadores = ["trago"];
+var accionJugadoresPiso2 = ["compañero"]; 
+var accionJugadoresPiso3 = ["compañero", "shot"];
+var accionJugadoresPiso4 = ["compañero", "shot", "piquito"];
+var accionJugadoresPiso5 = ["compañero", "shot", "piquito", "beso"];
+var accionJugadoresPiso6 = ["compañero", "shot", "piquito", "beso", "prenda"];
+var accionJugadoresPiso7 = ["compañero", "shot", "piquito", "beso", "prenda", "penitencia"];
 
 var clicks = 0;
 var ultimoClick = 0;
 var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
+
+var multiplier = 5;
+var piso1= multiplier * 1;
+var piso2= multiplier * 2;
+var piso3= multiplier * 3;
+var piso4= multiplier * 4;
+var piso5= multiplier * 5;
+var piso6= multiplier * 6;
+
 
 // IDEA: si sale penitencia como valor, entonces cargar una penitencia.
 // IDEA: Preguntar si hay gomita.
@@ -91,90 +106,90 @@ var mensaje = function getMessage() {
   var valorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
   var complementoValorTurnoJugador = turnoJugador[Math.floor(Math.random() * turnoJugador.length)];
   // Variables PLurales
-  if (valorTurnoJugador === "todos" && clicks <= 5 ||
-      valorTurnoJugador === "hombres" && clicks <= 5 ||
-      valorTurnoJugador === "mujeres" && clicks <= 5 ||
-      valorTurnoJugador === "solteros" && clicks <= 5 ||
-      valorTurnoJugador === "en pareja" && clicks <= 5 ||
-      valorTurnoJugador === "par" && clicks <= 5 ||
-      valorTurnoJugador === "impar" && clicks <= 5) {
+  if (valorTurnoJugador === "todos" && clicks <= piso1 ||
+      valorTurnoJugador === "hombres" && clicks <= piso1 ||
+      valorTurnoJugador === "mujeres" && clicks <= piso1 ||
+      valorTurnoJugador === "solteros" && clicks <= piso1 ||
+      valorTurnoJugador === "en pareja" && clicks <= piso1 ||
+      valorTurnoJugador === "par" && clicks <= piso1 ||
+      valorTurnoJugador === "impar" && clicks <= piso1) {
     var accionJugador = baseAccionJugadores;
   }
-  else if (valorTurnoJugador && clicks <= 5) {
+  else if (valorTurnoJugador && clicks <= piso1) {
     var accionJugador = baseAccionJugador;
   }
-  else if (valorTurnoJugador === "todos" && clicks > 5 && clicks <= 10 ||
-      valorTurnoJugador === "hombres" && clicks > 5 && clicks <= 10 ||
-      valorTurnoJugador === "mujeres" && clicks > 5 && clicks <= 10 ||
-      valorTurnoJugador === "solteros" && clicks > 5 && clicks <= 10 ||
-      valorTurnoJugador === "en pareja" && clicks > 5 && clicks <= 10 ||
-      valorTurnoJugador === "par" && clicks > 5 && clicks <= 10 ||
-      valorTurnoJugador === "impar" && clicks > 5 && clicks <= 10) {
-    var accionJugador = baseAccionJugadores.concat("compañero");
+  else if (valorTurnoJugador === "todos" && clicks > piso1 && clicks <= piso2 ||
+      valorTurnoJugador === "hombres" && clicks > piso1 && clicks <= piso2 ||
+      valorTurnoJugador === "mujeres" && clicks > piso1 && clicks <= piso2 ||
+      valorTurnoJugador === "solteros" && clicks > piso1 && clicks <= piso2 ||
+      valorTurnoJugador === "en pareja" && clicks > piso1 && clicks <= piso2 ||
+      valorTurnoJugador === "par" && clicks > piso1 && clicks <= piso2 ||
+      valorTurnoJugador === "impar" && clicks > piso1 && clicks <= piso2) {
+    var accionJugador = baseAccionJugadores.concat(accionJugadoresPiso2);
   }
-  else if (valorTurnoJugador && clicks > 5 && clicks <= 10) {
-    var accionJugador = baseAccionJugador.concat("compañero");
+  else if (valorTurnoJugador && clicks > piso1 && clicks <= piso2) {
+    var accionJugador = baseAccionJugador.concat(accionJugadoresPiso2);
   }
-  else if (valorTurnoJugador === "todos" && clicks > 10 && clicks <= 15 ||
-      valorTurnoJugador === "hombres" && clicks > 10 && clicks <= 15 ||
-      valorTurnoJugador === "mujeres" && clicks > 10 && clicks <= 15 ||
-      valorTurnoJugador === "solteros" && clicks > 10 && clicks <= 15 ||
-      valorTurnoJugador === "en pareja" && clicks > 10 && clicks <= 15 ||
-      valorTurnoJugador === "par" && clicks > 10 && clicks <= 15 ||
-      valorTurnoJugador === "impar" && clicks > 10 && clicks <= 15) {
-    var accionJugador = baseAccionJugadores.concat("compañero", "shot");
+  else if (valorTurnoJugador === "todos" && clicks > piso2 && clicks <= piso3 ||
+      valorTurnoJugador === "hombres" && clicks > piso2 && clicks <= piso3 ||
+      valorTurnoJugador === "mujeres" && clicks > piso2 && clicks <= piso3 ||
+      valorTurnoJugador === "solteros" && clicks > piso2 && clicks <= piso3 ||
+      valorTurnoJugador === "en pareja" && clicks > piso2 && clicks <= piso3 ||
+      valorTurnoJugador === "par" && clicks > piso2 && clicks <= piso3 ||
+      valorTurnoJugador === "impar" && clicks > piso2 && clicks <= piso3) {
+    var accionJugador = baseAccionJugadores.concat(accionJugadoresPiso3);
   }
-  else if (valorTurnoJugador && clicks > 10 && clicks <= 15) {
-    var accionJugador = baseAccionJugador.concat("compañero", "shot");
+  else if (valorTurnoJugador && clicks > piso2 && clicks <= piso3) {
+    var accionJugador = baseAccionJugador.concat(accionJugadoresPiso3);
 
   }
-  else if (valorTurnoJugador === "todos" && clicks > 15 && clicks <= 20 ||
-      valorTurnoJugador === "hombres" && clicks > 15 && clicks <= 20 ||
-      valorTurnoJugador === "mujeres" && clicks > 15 && clicks <= 20 ||
-      valorTurnoJugador === "solteros" && clicks > 15 && clicks <= 20 ||
-      valorTurnoJugador === "en pareja" && clicks > 15 && clicks <= 20 ||
-      valorTurnoJugador === "par" && clicks > 15 && clicks <= 20 ||
-      valorTurnoJugador === "impar" && clicks > 15 && clicks <= 20) {
-    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito");
+  else if (valorTurnoJugador === "todos" && clicks > piso3 && clicks <= piso4 ||
+      valorTurnoJugador === "hombres" && clicks > piso3 && clicks <= piso4 ||
+      valorTurnoJugador === "mujeres" && clicks > piso3 && clicks <= piso4 ||
+      valorTurnoJugador === "solteros" && clicks > piso3 && clicks <= piso4 ||
+      valorTurnoJugador === "en pareja" && clicks > piso3 && clicks <= piso4 ||
+      valorTurnoJugador === "par" && clicks > piso3 && clicks <= piso4 ||
+      valorTurnoJugador === "impar" && clicks > piso3 && clicks <= piso4) {
+    var accionJugador = baseAccionJugadores.concat(accionJugadoresPiso4);
   }
-  else if (valorTurnoJugador && clicks > 15 && clicks <= 20) {
-    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito");
+  else if (valorTurnoJugador && clicks > piso3 && clicks <= piso4) {
+    var accionJugador = baseAccionJugador.concat(accionJugadoresPiso4);
   }
-  else if (valorTurnoJugador === "todos" && clicks > 20 && clicks <= 25 ||
-      valorTurnoJugador === "hombres" && clicks > 20 && clicks <= 25 ||
-      valorTurnoJugador === "mujeres" && clicks > 20 && clicks <= 25 ||
-      valorTurnoJugador === "solteros" && clicks > 20 && clicks <= 25 ||
-      valorTurnoJugador === "en pareja" && clicks > 20 && clicks <= 25 ||
-      valorTurnoJugador === "par" && clicks > 20 && clicks <= 25 ||
-      valorTurnoJugador === "impar" && clicks > 20 && clicks <= 25) {
-    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito", "beso");
+  else if (valorTurnoJugador === "todos" && clicks > piso4 && clicks <= piso5 ||
+      valorTurnoJugador === "hombres" && clicks > piso4 && clicks <= piso5 ||
+      valorTurnoJugador === "mujeres" && clicks > piso4 && clicks <= piso5 ||
+      valorTurnoJugador === "solteros" && clicks > piso4 && clicks <= piso5 ||
+      valorTurnoJugador === "en pareja" && clicks > piso4 && clicks <= piso5 ||
+      valorTurnoJugador === "par" && clicks > piso4 && clicks <= piso5 ||
+      valorTurnoJugador === "impar" && clicks > piso4 && clicks <= piso5) {
+    var accionJugador = baseAccionJugadores.concat(accionJugadoresPiso5);
   }
-  else if (valorTurnoJugador && clicks > 20 && clicks <= 25) {
-    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito", "beso");
+  else if (valorTurnoJugador && clicks > piso4 && clicks <= piso5) {
+    var accionJugador = baseAccionJugador.concat(accionJugadoresPiso5);
   }
-  else if (valorTurnoJugador === "todos" && clicks > 25 && clicks <= 30 ||
-      valorTurnoJugador === "hombres" && clicks > 25 && clicks <= 30 ||
-      valorTurnoJugador === "mujeres" && clicks > 25 && clicks <= 30 ||
-      valorTurnoJugador === "solteros" && clicks > 25 && clicks <= 30 ||
-      valorTurnoJugador === "en pareja" && clicks > 25 && clicks <= 30 ||
-      valorTurnoJugador === "par" && clicks > 25 && clicks <= 30 ||
-      valorTurnoJugador === "impar" && clicks > 25 && clicks <= 30) {
-    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito", "beso", "prenda");
+  else if (valorTurnoJugador === "todos" && clicks > piso5 && clicks <= piso6 ||
+      valorTurnoJugador === "hombres" && clicks > piso5 && clicks <= piso6 ||
+      valorTurnoJugador === "mujeres" && clicks > piso5 && clicks <= piso6 ||
+      valorTurnoJugador === "solteros" && clicks > piso5 && clicks <= piso6 ||
+      valorTurnoJugador === "en pareja" && clicks > piso5 && clicks <= piso6 ||
+      valorTurnoJugador === "par" && clicks > piso5 && clicks <= piso6 ||
+      valorTurnoJugador === "impar" && clicks > piso5 && clicks <= piso6) {
+    var accionJugador = baseAccionJugadores.concat(accionJugadoresPiso6);
   }
-  else if (valorTurnoJugador && clicks > 25 && clicks <= 30) {
-    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda");
+  else if (valorTurnoJugador && clicks > piso5 && clicks <= piso6) {
+    var accionJugador = baseAccionJugador.concat(accionJugadoresPiso6);
   }
-  else if (valorTurnoJugador === "todos" && clicks > 30 ||
-      valorTurnoJugador === "hombres" && clicks > 30 ||
-      valorTurnoJugador === "mujeres" && clicks > 30 ||
-      valorTurnoJugador === "solteros" && clicks > 30 ||
-      valorTurnoJugador === "en pareja" && clicks > 30 ||
-      valorTurnoJugador === "par" && clicks > 30 ||
-      valorTurnoJugador === "impar" && clicks > 30) {
-    var accionJugador = baseAccionJugadores.concat("compañero", "shot", "piquito", "beso", "prenda", "penitencia");
+  else if (valorTurnoJugador === "todos" && clicks > piso6 ||
+      valorTurnoJugador === "hombres" && clicks > piso6 ||
+      valorTurnoJugador === "mujeres" && clicks > piso6 ||
+      valorTurnoJugador === "solteros" && clicks > piso6 ||
+      valorTurnoJugador === "en pareja" && clicks > piso6 ||
+      valorTurnoJugador === "par" && clicks > piso6 ||
+      valorTurnoJugador === "impar" && clicks > piso6) {
+    var accionJugador = baseAccionJugadores.concat(accionJugadoresPiso7);
   }
-  else if (valorTurnoJugador && clicks > 30) {
-    var accionJugador = baseAccionJugador.concat("compañero", "shot", "piquito", "beso", "prenda", "penitencia");
+  else if (valorTurnoJugador && clicks > piso6) {
+    var accionJugador = baseAccionJugador.concat(accionJugadoresPiso7);
   }
 
   // Sumar acciones
@@ -269,9 +284,9 @@ var mensaje = function getMessage() {
   if (complementoValorTurnoJugador === "yo") {
     texto_ComplementoTurnoJugador = ["a mi"];
   } else if (complementoValorTurnoJugador === "izquierda" || complementoValorTurnoJugador === "derecha") {
-    texto_ComplementoTurnoJugador = ["al de su" + " "+ complementoValorTurnoJugador];
+    texto_ComplementoTurnoJugador = ["al de su" + complementoValorTurnoJugador];
   } else if (complementoValorTurnoJugador === "todos") {
-    texto_ComplementoTurnoJugador = ["a quién sea"];
+    texto_ComplementoTurnoJugador = ["a quién quiera"];
   } else if (complementoValorTurnoJugador === "hombres" || complementoValorTurnoJugador === "solteros" || complementoValorTurnoJugador === "en pareja") {
     texto_ComplementoTurnoJugador = ["a los" + " " + complementoValorTurnoJugador];
   } else if (complementoValorTurnoJugador === "mujeres") {
@@ -286,16 +301,8 @@ var mensaje = function getMessage() {
     texto_ComplementoTurnoJugador = ["Valor Turno jugador not found"];
   }
 
-  if (complementoValorTurnoJugador === "yo") {
-    texto_PLuralComplementoTurnoJugador = ["me"];
-  }
-  else if (complementoValorTurnoJugador) {
-   texto_PLuralComplementoTurnoJugador = ["le"];
- }
-
   var conjugacionesBesar = [
-    "dar" + texto_PLuralComplementoTurnoJugador + " " + "un" + " "
-    + valorAccionJugador + " " + texto_ComplementoTurnoJugador
+    "dar un" + " " + valorAccionJugador + " " + texto_ComplementoTurnoJugador
   ];
 
   // Oraciones acción juego
