@@ -269,9 +269,9 @@ var mensaje = function getMessage() {
   if (complementoValorTurnoJugador === "yo") {
     texto_ComplementoTurnoJugador = ["a mi"];
   } else if (complementoValorTurnoJugador === "izquierda" || complementoValorTurnoJugador === "derecha") {
-    texto_ComplementoTurnoJugador = ["al de su" + complementoValorTurnoJugador];
+    texto_ComplementoTurnoJugador = ["al de su" + " "+ complementoValorTurnoJugador];
   } else if (complementoValorTurnoJugador === "todos") {
-    texto_ComplementoTurnoJugador = ["a quién quiera"];
+    texto_ComplementoTurnoJugador = ["a quién sea"];
   } else if (complementoValorTurnoJugador === "hombres" || complementoValorTurnoJugador === "solteros" || complementoValorTurnoJugador === "en pareja") {
     texto_ComplementoTurnoJugador = ["a los" + " " + complementoValorTurnoJugador];
   } else if (complementoValorTurnoJugador === "mujeres") {
@@ -286,8 +286,16 @@ var mensaje = function getMessage() {
     texto_ComplementoTurnoJugador = ["Valor Turno jugador not found"];
   }
 
+  if (complementoValorTurnoJugador === "yo") {
+    texto_PLuralComplementoTurnoJugador = ["me"];
+  }
+  else if (complementoValorTurnoJugador) {
+   texto_PLuralComplementoTurnoJugador = ["le"];
+ }
+
   var conjugacionesBesar = [
-    "dar un" + " " + valorAccionJugador + " " + texto_ComplementoTurnoJugador
+    "dar" + texto_PLuralComplementoTurnoJugador + " " + "un" + " "
+    + valorAccionJugador + " " + texto_ComplementoTurnoJugador
   ];
 
   // Oraciones acción juego
