@@ -54,9 +54,13 @@ var ejemplosReglas= [
   "Invitar a que alguien haga algo",
 ];
 
+var ejemplosPenitencia= [
+  "Adivinar quién te beso"
+];
+
 var baseAccionJugador = ["nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
 var baseAccionJugadores = ["trago"];
-var accionJugadoresPiso2 = ["compañero"]; 
+var accionJugadoresPiso2 = ["compañero"];
 var accionJugadoresPiso3 = ["compañero", "shot"];
 var accionJugadoresPiso4 = ["compañero", "shot", "piquito"];
 var accionJugadoresPiso5 = ["compañero", "shot", "piquito", "beso"];
@@ -67,7 +71,7 @@ var clicks = 0;
 var ultimoClick = 0;
 var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
-var multiplier = 5;
+var multiplier = 1;
 var piso1= multiplier * 1;
 var piso2= multiplier * 2;
 var piso3= multiplier * 3;
@@ -240,6 +244,7 @@ var mensaje = function getMessage() {
   var valorEjemplosNunca = ejemplosNunca[Math.floor(Math.random() * ejemplosNunca.length)];
   var valorEjemplosCultura = ejemplosCultura[Math.floor(Math.random() * ejemplosCultura.length)];
   var valorEjemplosReglas = ejemplosReglas[Math.floor(Math.random() * ejemplosReglas.length)];
+  var valorEjemplosPenitencia = ejemplosPenitencia[Math.floor(Math.random() * ejemplosReglas.length)];
 
   // plural Acciones
   if (valorNumeroDuracionAccionJugador > 1) {
@@ -284,7 +289,7 @@ var mensaje = function getMessage() {
   if (complementoValorTurnoJugador === "yo") {
     texto_ComplementoTurnoJugador = ["a mi"];
   } else if (complementoValorTurnoJugador === "izquierda" || complementoValorTurnoJugador === "derecha") {
-    texto_ComplementoTurnoJugador = ["al de su" + complementoValorTurnoJugador];
+    texto_ComplementoTurnoJugador = ["al de su" + " " + complementoValorTurnoJugador];
   } else if (complementoValorTurnoJugador === "todos") {
     texto_ComplementoTurnoJugador = ["a quién quiera"];
   } else if (complementoValorTurnoJugador === "hombres" || complementoValorTurnoJugador === "solteros" || complementoValorTurnoJugador === "en pareja") {
@@ -336,7 +341,7 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador === "trago" || valorAccionJugador === "shot") {
     textoAccionJugador = [conjugacionesTomar];
   } else if (valorAccionJugador === "prenda") {
-    textoAccionJugador = ["quitarse una prenda"];
+    textoAccionJugador = ["quitarse una prenda"]; //A mi me toca quitarse una prenda
   } else if (valorAccionJugador === "penitencia") {
     textoAccionJugador = ["cumplir una penitencia"];
   }
@@ -385,7 +390,7 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador === "prenda") {
     textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
   } else if (valorAccionJugador === "penitencia") {
-    textoEjemploAccionJugador = ["(hacer lo que le pidan que haga)"];
+    textoEjemploAccionJugador = [valorEjemplosPenitencia];
   }
 
   // Variables turno jugador
