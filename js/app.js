@@ -459,7 +459,7 @@ var mensaje = function getMessage() {
 
   // Markups HTML
   fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
-  var h1 = ["<h1  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='1s'>"];
+  var h1 = ["<h1  class='wow fadeIn' data-wow-duration='0.5s' data-wow-delay='0s'>"];
 
   // Retornar valor
   return [h1 + fontAwesome + "<br>" + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
@@ -467,7 +467,7 @@ var mensaje = function getMessage() {
 }
 // #textoSecundario
 var textoSecundario = function getTextoSecundario() {
-    var h3 = ["<h3  class='wow fadeIn' data-wow-duration='1s' data-wow-delay='2s'>"];
+    var h3 = ["<h3  class='wow fadeIn' data-wow-duration='0.5s' data-wow-delay='1s'>"];
 
     // Retornar valor
     return [h3 + textoEjemploAccionJugador + "</h3>"];
