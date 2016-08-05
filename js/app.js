@@ -71,7 +71,7 @@ var clicks = 0;
 var ultimoClick = 0;
 var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
-var multiplier = 1;
+var multiplier = prompt("Cantidad de jugadores", "1");;
 var piso1= multiplier * 1;
 var piso2= multiplier * 2;
 var piso3= multiplier * 3;
