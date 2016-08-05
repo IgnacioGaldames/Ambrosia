@@ -88,13 +88,13 @@ $image_path: '/images' !default;
 // * Saving server bandwidth sending the extra classes
 // * Save client computation against the classes
 // it is RECOMMENDED you set this to true.
-$trim-color-classes: true;
+$trim-color-classes: false !default;
 
 // Use color primarily for emphasis. Choose colors that fit with
 // your brand and provide good contrast between visual components.
 $color-primary: $palette-indigo-500 !default;
 $color-primary-dark: $palette-indigo-700 !default;
-$color-accent: $palette-indigo-A200 !default;
+$color-accent: $palette-pink-A200 !default;
 
 // Our primary is dark, so use $color-dark-contrast for overlaid text.
 $color-primary-contrast: $color-dark-contrast !default;
