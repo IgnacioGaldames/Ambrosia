@@ -49,3 +49,4 @@ Temporary Items
 .codekit
 .codekit-cache
 config.codekit
+*.codekit
