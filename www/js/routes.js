@@ -36,10 +36,14 @@ angular.module('app.routes', [])
     abstract:true
   })
 
-  .state('nuevoJugador', {
+  .state('inicio.nuevoJugador', {
     url: '/nuevo_jugador',
-    templateUrl: 'templates/nuevoJugador.html',
-    controller: 'nuevoJugadorCtrl'
+    views: {
+      'tab3': {
+        templateUrl: 'templates/nuevoJugador.html',
+        controller: 'nuevoJugadorCtrl'
+      }
+    }
   })
 
 $urlRouterProvider.otherwise('/inicio/jugar')
