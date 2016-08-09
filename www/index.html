@@ -5,8 +5,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    
-    
+
+
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -16,16 +16,16 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    
+
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    
+
 
     <style type="text/css">
       .platform-ios .manual-ios-statusbar-padding{
         padding-top:20px;
       }
       .manual-remove-top-padding{
-        padding-top:0px; 
+        padding-top:0px;
       }
       .manual-remove-top-padding .scroll{
         padding-top:0px !important;
@@ -44,14 +44,14 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
-    
-     
-    <script src="js/directives.js"></script>
-     
-    <script src="js/services.js"></script>
-    
 
-    <!-- Only required for Tab projects w/ pages in multiple tabs 
+
+    <script src="js/directives.js"></script>
+
+    <script src="js/services.js"></script>
+
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->
 
@@ -72,15 +72,15 @@
             <ion-header-bar class="bar-stable">
                 <div class="title">Opciones</div>
             </ion-header-bar>
-            <ion-content padding="true" class="side-menu-right has-header">
+            <ion-content padding="true" class="side-menu-right has-header" ng-controller="Menu">
                 <form id="opciones-form1" class="list " data-componentid="form1">
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle1" class=" " data-componentid="toggle1">Gomitas</ion-toggle>
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle2" name="compañero" class=" " data-componentid="toggle2">Compañero</ion-toggle>
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle3" name="shot" class=" " data-componentid="toggle3">Shot</ion-toggle>
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle4" name="piquito" class=" " data-componentid="toggle4">Piquito</ion-toggle>
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle5" name="beso" class=" " data-componentid="toggle5">Beso</ion-toggle>
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle6" name="prenda" class=" " data-componentid="toggle6">Prenda</ion-toggle>
-                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle7" name="penitencia" class=" " data-componentid="toggle7">Penitencia</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle1" name="gomitas" class=" " data-componentid="toggle1" ng-model="toggle.gomitas">Gomitas: {{toggle.gomitas}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle2" name="compañero" class=" " data-componentid="toggle2" ng-model="toggle.companero">Compañero: {{toggle.companero}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle3" name="shot" class=" " data-componentid="toggle3" ng-model="toggle.shot">Shot: {{toggle.shot}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle4" name="piquito" class=" " data-componentid="toggle4" ng-model="toggle.piquito">Piquito: {{toggle.piquito}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle5" name="beso" class=" " data-componentid="toggle5" ng-model="toggle.beso">Beso: {{toggle.beso}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle6" name="prenda" class=" " data-componentid="toggle6" ng-model="toggle.prenda">Prenda: {{toggle.prenda}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle7" name="penitencia" class=" " data-componentid="toggle7" ng-model="toggle.penitencia">Penitencia: {{toggle.penitencia}}</ion-toggle>
                 </form>
             </ion-content>
         </ion-side-menu>
