@@ -11,6 +11,7 @@ $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            rgba(68, 68, 68, 0.5) !default;
+$transparent:                     transparent !default;
 
 
 // Base
@@ -146,6 +147,12 @@ $button-dark-text:                #fff !default;
 $button-dark-border:              #111 !default;
 $button-dark-active-bg:           #262626 !default;
 $button-dark-active-border:       #000 !default;
+
+$button-transparent-bg:                  $transparent !default;
+$button-transparent-text:                #fff !default;
+$button-transparent-border:              #111 !default;
+$button-transparent-active-bg:           #262626 !default;
+$button-transparent-active-border:       #000 !default;
 
 $button-default-bg:               $button-stable-bg !default;
 $button-default-text:             $button-stable-text !default;
@@ -367,7 +374,13 @@ $item-dark-text:                  $button-dark-text !default;
 $item-dark-active-bg:             $button-dark-active-bg !default;
 $item-dark-active-border:         $button-dark-active-border !default;
 
-$item-default-bg:                 $item-light-bg !default;
+$item-transparent-bg:                    $button-transparent-bg !default;
+$item-transparent-border:                $button-transparent-border !default;
+$item-transparent-text:                  $button-transparent-text !default;
+$item-transparent-active-bg:             $button-transparent-active-bg !default;
+$item-transparent-active-border:         $button-transparent-active-border !default;
+
+$item-default-bg:                 $item-transparent-bg !default;
 $item-default-border:             $item-light-border !default;
 $item-default-text:               $item-light-text !default;
 $item-default-active-bg:          #D9D9D9 !default;
@@ -409,7 +422,7 @@ $list-header-margin-top:          20px !default;
 // -------------------------------
 
 $card-header-bg:                  #F5F5F5 !default;
-$card-body-bg:                    #fff !default;
+$card-body-bg:                    rgba(255,255,255,0.5) !default;
 $card-footer-bg:                  #F5F5F5 !default;
 
 $card-padding:                    10px !default;

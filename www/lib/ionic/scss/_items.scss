@@ -4,7 +4,7 @@
  */
 
 .item {
-  @include item-style($item-default-bg, $item-default-border, $item-default-text);
+  @include item-style($item-transparent-bg, $item-transparent-border, $item-transparent-text);
 
   position: relative;
   z-index: $z-index-item; // Make sure the borders and stuff don't get hidden by children
