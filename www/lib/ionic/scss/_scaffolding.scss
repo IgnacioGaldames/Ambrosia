@@ -285,6 +285,11 @@ ion-infinite-scroll {
   width: 100%;
   height: 100%;
   background-color: $base-background-color;
+  background-image:
+ -webkit-radial-gradient(80% 10%, circle, #BF7667, transparent),
+ -webkit-radial-gradient(80% 50%, circle, #EFDDB7, transparent),
+ -webkit-radial-gradient(20% 80%, 40em 40em, #977351, transparent),
+ -webkit-radial-gradient(10% 10%, circle, #E1C3B9, transparent);
   overflow: hidden;
 }
 .view-container {
