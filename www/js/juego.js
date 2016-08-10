@@ -3,17 +3,17 @@ $(document).foundation();
 new WOW().init();
 
 // #Variables
-var turnoJugador = [
-  "yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo",
-  "todos", "hombres", "mujeres", "solteros", "en pareja", "par", "impar", "risa"
-];
+            var turnoJugador = [
+              "yo", "izquierda", "derecha", "viejo", "joven", "alto", "bajo",
+              "todos", "hombres", "mujeres", "solteros", "en pareja", "par", "impar", "risa"
+            ];
 
-var numeroAccionJugador = [1, 2];
-var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
-var duracionAccion = ["turno", "siempre"];
+  var numeroAccionJugador = [1, 2];
+  var numeroDuracionAccionJugador = [1, 2, 3, 4, 5];
+  var duracionAccion = ["turno", "siempre"];
 
-var decisionJugador = ["elegir", "elejido"];
-var complemento_accionJugador = ["tomar", "regalar"];
+  var decisionJugador = ["elegir", "elejido"];
+  var complemento_accionJugador = ["tomar", "regalar"];
 
 var ejemplosTomar = [
   "(Levante el vaso y beba su contenido)",
@@ -58,14 +58,14 @@ var ejemplosPenitencia= [
   "Adivinar quién te beso"
 ];
 
-var baseAccionJugador = ["nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
-var baseAccionJugadores = ["trago"];
-var accionJugadoresPiso2 = ["compañero"];
-var accionJugadoresPiso3 = ["compañero", "shot"];
-var accionJugadoresPiso4 = ["compañero", "shot", "piquito"];
-var accionJugadoresPiso5 = ["compañero", "shot", "piquito", "beso"];
-var accionJugadoresPiso6 = ["compañero", "shot", "piquito", "beso", "prenda"];
-var accionJugadoresPiso7 = ["compañero", "shot", "piquito", "beso", "prenda", "penitencia"];
+  var baseAccionJugador = ["nunca", "limon", "dedo", "chancho", "aob", "qlh", "vom", "cultura", "cascada", "historia", "regla"];
+  var baseAccionJugadores = ["trago"];
+  var accionJugadoresPiso2 = ["compañero"];
+  var accionJugadoresPiso3 = [accionJugadoresPiso2, "shot"];
+  var accionJugadoresPiso4 = [accionJugadoresPiso3, "piquito"];
+  var accionJugadoresPiso5 = [accionJugadoresPiso4, "beso"];
+  var accionJugadoresPiso6 = [accionJugadoresPiso5, "prenda"];
+  var accionJugadoresPiso7 = [accionJugadoresPiso6, "penitencia"];
 
 var clicks = 0;
 var ultimoClick = 0;

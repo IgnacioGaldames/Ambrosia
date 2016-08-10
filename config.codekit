@@ -4964,7 +4964,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 3,
-		"shouldRunAutoprefixer": 0,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
@@ -5027,6 +5027,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/www\/js\/min\/controllers-min.js",
 		"outputAbbreviatedPath": "\/www\/js\/min\/min\/controllers-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/www\/js\/min\/juego-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/js\/min\/juego-min.js",
+		"outputAbbreviatedPath": "\/www\/js\/min\/min\/juego-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

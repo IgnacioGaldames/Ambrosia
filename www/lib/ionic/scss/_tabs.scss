@@ -406,7 +406,7 @@ ion-tabs {
 .tabs-icon-bottom > .tabs .tab-item,
 .tabs-icon-bottom.tabs .tab-item {
   font-size: $tabs-text-font-size-side-icon;
-  line-height: $tabs-text-font-size;
+  /* line-height: $tabs-text-font-size; */
 }
 
 .tab-item .icon {
@@ -525,4 +525,3 @@ ion-tabs {
 .pane[hide-nav-bar="true"] .has-tabs-top{
   top:$tabs-height
 }
-
