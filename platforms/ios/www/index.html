@@ -1,41 +1,91 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+    <link href="lib/ionic/css/ionic.app.min.css" rel="stylesheet">
+
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px;
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+
+    </style>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+
+
+    <script src="js/directives.js"></script>
+
+    <script src="js/services.js"></script>
+
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">
+  <div>
+    <ion-side-menus enable-menu-with-back-views="true" data-componentid="side-menu21">
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-buttons side="right">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="right" id="side-menu21">
+            <ion-header-bar class="bar-stable">
+                <div class="title">Opciones</div>
+            </ion-header-bar>
+            <ion-content padding="true" class="side-menu-right has-header" ng-controller="Menu">
+                <form id="opciones-form1" class="list " data-componentid="form1">
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle1" name="gomitas" class=" " data-componentid="toggle1" ng-model="toggle.gomitas">Gomitas: {{toggle.gomitas}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle2" name="compañero" class=" " data-componentid="toggle2" ng-model="toggle.companero">Compañero: {{toggle.companero}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle3" name="shot" class=" " data-componentid="toggle3" ng-model="toggle.shot">Shot: {{toggle.shot}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle4" name="piquito" class=" " data-componentid="toggle4" ng-model="toggle.piquito">Piquito: {{toggle.piquito}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle5" name="beso" class=" " data-componentid="toggle5" ng-model="toggle.beso">Beso: {{toggle.beso}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle6" name="prenda" class=" " data-componentid="toggle6" ng-model="toggle.prenda">Prenda: {{toggle.prenda}}</ion-toggle>
+                    <ion-toggle toggle-class="toggle-balanced" ng-checked="true" id="opciones-toggle7" name="penitencia" class=" " data-componentid="toggle7" ng-model="toggle.penitencia">Penitencia: {{toggle.penitencia}}</ion-toggle>
+                </form>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</div>
+  </body>
 </html>
