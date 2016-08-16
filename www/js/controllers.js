@@ -70,7 +70,6 @@ angular.module('app.controllers', [])
 
         var clicks = 0;
         var ultimoClick = 0;
-        var tituloFontAwesome = ["<i class='fa fa-beer'></i>"];
 
         var multiplier = 2;
         var piso1 = multiplier * 1;
@@ -418,11 +417,22 @@ angular.module('app.controllers', [])
               icono_accionJugador = ["beer"];
             }
 
-            $scope.gradiente = {'background-color': myGradiente};
+            //display box reglas
+
+            if (valorAccionJugador === "regla") {
+              displayRegla = true;
+            }
+            else if (valorAccionJugador) {
+              displayRegla = false;
+            }
+            $scope.gradiente = {'background-color': myGradiente,
+               'transition': 'all 0.5s ease',
+               'background-blend-mode': 'screen',
+            };
 
             $scope.jugadores = texto_turnoJugador + " " + textoAccionJugador;
             $scope.ejemplos = textoEjemploAccionJugador;
-            $scope.onoff = false;
+            $scope.onoff = displayRegla;
             $scope.icono_accionJugador = icono_accionJugador;
         }
 

@@ -1,10 +1,10 @@
-<ion-view title="Jugar" id="page2" class=" " ng-controller="jugarCtrl" ng-style="gradiente">
+<ion-view title="Jugar" id="page2" class=" " ng-controller="jugarCtrl" ng-style="gradiente" data-ng-init="jugar()">
     <ion-content padding="true" class="has-header">
         <div class="list card " id="jugar-card22">
             <div class="item item-body " id="jugar-list-item-container2">
               <div class="item item-text-wrap">
                 <i class="fa fa-beer"></i>
-                <h1 id="jugar-heading1" style="color:#000000;text-align:center;" class=" ">
+                <h1 id="jugar-heading1" style="text-align:center;" class=" ">
                   {{jugadores}}
                 </h1>
               </div>
@@ -13,7 +13,7 @@
               </div>
             </div>
         </div>
-        <div class="list card " id="jugar-card23" ng-show="{{onoff}}">
+        <div class="list card " id="jugar-card23" ng-show="onoff">
             <form id="jugar-form4" class="list ">
                 <label class="item item-input item-stacked-label " id="jugar-input4" name="nueva-regla">
                     <span class="input-label">nueva regla</span>
@@ -25,6 +25,6 @@
                 <span class="item-note">lorem ipsum</span>
             </ion-item>
         </div>
-        <button id="jugar-button2" style="border-radius:0px 0px 0px 0px;" class=" button button-positive  button-block icon ion-ios-play " ng-click="jugar()"></button>
+        <button id="jugar-button2" style="border-radius:0px 0px 0px 0px;" class=" button button-dark  button-block icon ion-ios-play " ng-click="jugar()"></button>
     </ion-content>
 </ion-view>

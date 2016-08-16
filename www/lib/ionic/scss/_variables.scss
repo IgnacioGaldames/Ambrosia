@@ -38,7 +38,7 @@ $headings-font-weight:            500 !default;
 $headings-line-height:            1.2 !default;
 
 $base-background-color:           #fff !default;
-$base-color:                      #000 !default;
+$base-color:                      #fff !default;
 
 $link-color:                      $positive !default;
 $link-hover-color:                darken($link-color, 15%) !default;
@@ -150,7 +150,7 @@ $button-dark-active-border:       #000 !default;
 
 $button-transparent-bg:                  $transparent !default;
 $button-transparent-text:                #fff !default;
-$button-transparent-border:              #111 !default;
+$button-transparent-border:              rgba(0, 0, 0, 0.1) !default;
 $button-transparent-active-bg:           #262626 !default;
 $button-transparent-active-border:       #000 !default;
 
@@ -423,6 +423,8 @@ $list-header-margin-top:          20px !default;
 
 $card-header-bg:                  #F5F5F5 !default;
 $card-body-bg:                    rgba(255,255,255,0.5) !default;
+$card-body-bg-dark:               rgba(0,0,0,0.5) !default;
+$card-body-bg-gradient:           linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%) !default;
 $card-footer-bg:                  #F5F5F5 !default;
 
 $card-padding:                    10px !default;

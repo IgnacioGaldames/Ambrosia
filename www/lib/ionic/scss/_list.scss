@@ -50,7 +50,8 @@
   overflow: hidden;
   margin: ($content-padding * 2) $content-padding;
   border-radius: $card-border-radius;
-  background-color: $card-body-bg;
+  background: $card-body-bg-gradient;
+  background-blend-mode: screen;
 }
 
 .card {
