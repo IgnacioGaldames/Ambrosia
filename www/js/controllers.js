@@ -431,7 +431,7 @@ angular.module('app.controllers', [])
             $scope.jugadores = texto_turnoJugador + " " + textoAccionJugador;
             $scope.ejemplos = textoEjemploAccionJugador;
             $scope.onoff = displayRegla;
-            $scope.icono_accionJugador = icono_accionJugador;
+            $scope.icono_accionJugador = "fa fa-" + icono_accionJugador;
         }
 
 
