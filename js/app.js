@@ -415,6 +415,7 @@ var mensaje = function getMessage() {
   }
 
   // Iconos acción juego
+  /*
   if (valorAccionJugador === "trago") {
     icono_accionJugador = ["beer"];
   } else if (valorAccionJugador === "nunca") {
@@ -452,6 +453,56 @@ var mensaje = function getMessage() {
   } else if (valorAccionJugador) {
     icono_accionJugador = ["beer"];
   }
+  */
+
+  switch(valorAccionJugador) {
+    case 'limon':
+        icono_accionJugador = ['lemon-o'];
+        break;
+    case 'dedo':
+    case 'chancho':
+        icono_accionJugador = ['hand-o-down'];
+        break;
+    case 'aob':
+        icono_accionJugador = ['fa-adjust'];
+        break;
+    case 'regla':
+        icono_accionJugador = ['gavel'];
+        break;
+    case 'qlh':
+        icono_accionJugador = ['balance-scale'];
+        break;
+    case 'vom':
+        icono_accionJugador = ['bullhorn'];
+        break;
+    case 'cultura':
+        icono_accionJugador = ['comments'];
+        break;
+    case 'shot':
+        icono_accionJugador = ['glass'];
+        break;
+    case 'cascada':
+        icono_accionJugador = ['users'];
+        break;
+    case 'historia':
+        icono_accionJugador = ['book'];
+        break;
+    case 'piquito':
+        icono_accionJugador = ['heart-o'];
+        break;
+    case 'beso':
+        icono_accionJugador = ['heart'];
+        break;
+    case 'prenda':
+        icono_accionJugador = ['shopping-bag'];
+        break;
+    case 'penitencia':
+        icono_accionJugador = ['exclamation-circle'];
+        break;
+    default:
+        icono_accionJugador = ['beer'];
+}
+
   console.log(accionJugador);
   console.log(valorAccionJugador);
   console.log(valorTurnoJugador);
