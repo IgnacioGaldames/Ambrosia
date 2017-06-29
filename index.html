@@ -12,31 +12,30 @@
 </head>
 
 <body class="animated fadeIn"  onload="cargarTexto();">
-  <div class="mdl-layout__container has-scrolling-header">
-    <div class="container mdl-shadow--2dp">
-      <div class="row principal mdl-shadow--2dp">
-        <div class="large-12 large-centered columns center">
+
+    <div class="container  text-center">
+      <div class="row border-1 rounded">
+        <div class="col-md-12 text-danger">
           <div id="texto"></div>
         </div>
       </div>
-      <div class="row secundario masked">
-        <div class="large-12 large-centered center columns">
+      <div class="row mb-5">
+        <div class="col-md-12">
           <div id="texto_secundario"></div>
             <div id="reglas"></div>
         </div>
       </div>
       <footer>
-        <button onclick="cargarTexto();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent btn-play">
-          <i class="fa fa-play"></i> Jugar!</button>
-          <br>
-          <a href="https://github.com/IgnacioGaldames/Ambrosia" target="_blank"><i class="fa fa-github"></i></a>
+        <div class="col-md-12">
+          <button onclick="cargarTexto();"  type="button" class="btn btn-primary">
+            <i class="fa fa-play"></i> Jugar!
+          </button>
+        </div>
       </footer>
 
     </div>
     <!-- End container -->
 
-
-  </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <script src="js/app.js" ></script>
