@@ -458,7 +458,7 @@ switch (valorAccionJugador) {
 
   // Markups HTML
   fontAwesome = ["<i class='fa fa-" + icono_accionJugador + "'></i>"];
-  var h1 = ["<h1  class='wow fadeIn' data-wow-duration='0.5s' data-wow-delay='0s'>"];
+  var h1 = ["<h1  class='h1 wow fadeIn' data-wow-duration='0.5s' data-wow-delay='0s'>"];
 
   // Retornar valor
   return [h1 + fontAwesome + "<br>" + " " + texto_turnoJugador + " " + textoAccionJugador + "</h1>" + "<br>" ];
