@@ -1,6 +1,5 @@
-$(document).foundation();
+
 //Scripts
-new WOW().init();
 
 // #Variables
 var turnoJugador = [
@@ -310,148 +309,148 @@ var mensaje = function getMessage() {
     "dar un" + " " + valorAccionJugador + " " + texto_ComplementoTurnoJugador
   ];
 
-  // Oraciones acción juego
+  // Variables turno jugador
+switch (valorTurnoJugador) {
+  case "yo":
+    texto_turnoJugador = ["A mi me toca"];
+    break;
+  case "izquierda":
+  case "derecha":
+    texto_turnoJugador = ["Al de mi" + conjugar];
+    break;
+  case "todos":
+    texto_turnoJugador = ["A" + conjugar];
+    break;
+  case "hombres":
+  case "solteros":
+  case "en pareja":
+    texto_turnoJugador = ["A los" + conjugar];
+    break;
+  case "mujeres":
+    texto_turnoJugador = ["A las" + conjugar];
+    break;
+  case "viejo":
+  case "joven":
+  case "alto":
+  case "bajo":
+    texto_turnoJugador = ["Al más" + conjugar];
+    break;
+  case "par":
+  case "impar":
+    texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + " " + "les toca"];
+    break;
+  case "risa":
+    texto_turnoJugador = ["Al que se ría primero le toca"];
+    break;
+  default:
+    texto_turnoJugador = ["Valor Turno jugador not found"];
+}
 
-  if (valorAccionJugador === "nunca") {
-    textoAccionJugador = ["decir nunca nunca"];
-  } else if (valorAccionJugador === "limon") {
-    textoAccionJugador = ["decir un" + " " + valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon];
-  } else if (valorAccionJugador === "dedo") {
-    textoAccionJugador = ["poner un dedo sobre la mesa"];
-  } else if (valorAccionJugador === "chancho") {
-    textoAccionJugador = ["inflar los pómulos"];
-  } else if (valorAccionJugador === "aob") {
-    textoAccionJugador = ["dar dos opciones a elegir"];
-  } else if (valorAccionJugador === "qlh") {
-    textoAccionJugador = ["inventar un escenario y que el resto apunte a quién lo haría o lo diría"];
-  } else if (valorAccionJugador === "vom") {
-    textoAccionJugador = ["decir una verdad o una mentira"];
-  } else if (valorAccionJugador === "cultura") {
-    textoAccionJugador = ["empezar un tema para jugar al bachillerato"];
-  } else if (valorAccionJugador === "cascada") {
-    textoAccionJugador = ["iniciar la cascada"];
-  } else if (valorAccionJugador === "historia") {
-    textoAccionJugador = ["empezar una historia"];
-  } else if (valorAccionJugador === "regla") {
-    textoAccionJugador = ["crear una regla"];
-  } else if (valorAccionJugador === "beso" || valorAccionJugador === "piquito") {
-    textoAccionJugador = [conjugacionesBesar];
-  } else if (valorAccionJugador === "compañero") {
-    textoAccionJugador = ["elegir a alguien para que sufra el mismo destino" + " " + textoValorDuracionAccion];
-  } else if (valorAccionJugador === "trago" || valorAccionJugador === "shot") {
-    textoAccionJugador = [conjugacionesTomar];
-  } else if (valorAccionJugador === "prenda") {
-    textoAccionJugador = ["quitarse una prenda"]; //A mi me toca quitarse una prenda
-  } else if (valorAccionJugador === "penitencia") {
-    textoAccionJugador = ["cumplir una penitencia"];
-  }
+// Ejemplos acción juego
 
-  // Ejemplos acción juego
-  if (valorAccionJugador === "nunca") {
+switch (valorAccionJugador) {
+  case "nunca":
     textoEjemploAccionJugador = [
       "Yo nunca nunca he" + " " + valorEjemplosNunca
     ];
-  } else if (valorAccionJugador === "limon") {
+    icono_accionJugador = ['beer'];
+    textoAccionJugador = ["decir nunca nunca"];
+    break;
+  case "limon":
     textoEjemploAccionJugador = [
       "Todos se enumeran. El primero debe decir un" + " " +
        valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon + " " +
        valorNumeroDuracionAccionJugador + " " + valorEjemplosLimon + pluralDuracionAcciones + " " + "medio" + " " + valorEjemplosLimon
     ];
-  } else if (valorAccionJugador === "dedo") {
+    icono_accionJugador = ['lemon-o'];
+    textoAccionJugador = ["decir un" + " " + valorEjemplosLimon + " " + "medio" + " "+ valorEjemplosLimon];
+    break;
+  case "dedo":
     textoEjemploAccionJugador = ["El último en poner el dedo sobre la mesa, toma"];
-  } else if (valorAccionJugador === "chancho") {
+    icono_accionJugador = ['hand-o-down'];
+    textoAccionJugador = ["poner un dedo sobre la mesa"];
+    break;
+  case "chancho":
     textoEjemploAccionJugador = ["El último en inflar los pómulos, toma"];
-  } else if (valorAccionJugador === "aob") {
+    icono_accionJugador = ['hand-o-down'];
+    textoAccionJugador = ["inflar los pómulos"];
+    break;
+  case "aob":
     textoEjemploAccionJugador = ["Todos eligen entre a y b y los que saquen menos votos, toman"];
-  } else if (valorAccionJugador === "qlh") {
+    icono_accionJugador = ['fa-adjust'];
+    textoAccionJugador = ["dar dos opciones a elegir"];
+    break;
+  case "qlh":
     textoEjemploAccionJugador = ["(Quién saque más votos, toma)"];
-  } else if (valorAccionJugador === "vom") {
+    icono_accionJugador = ['balance-scale'];
+    textoAccionJugador = ["inventar un escenario y que el resto apunte a quién lo haría o lo diría"];
+    break;
+  case "vom":
     textoEjemploAccionJugador = ["(Todos adivinan si es verdad o mentira. Quienes no acierten, toman)"];
-  } else if (valorAccionJugador === "cultura") {
+    icono_accionJugador = ['bullhorn'];
+    textoAccionJugador = ["decir una verdad o una mentira"];
+    break;
+  case "cultura":
     textoEjemploAccionJugador = [
       "Como por ejemplo:" + " " + valorEjemplosCultura
     ];
-  } else if (valorAccionJugador === "cascada") {
+    icono_accionJugador = ['comments'];
+    textoAccionJugador = ["empezar un tema para jugar al bachillerato"];
+    break;
+  case "cascada":
     textoEjemploAccionJugador = ["(Todos empiezan a tomar al mismo tiempo y solo dejan de hacerlo cuando el que está a su derecha para)"];
-  } else if (valorAccionJugador === "historia") {
+    icono_accionJugador = ['users'];
+    textoAccionJugador = ["iniciar la cascada"];
+    break;
+  case "historia":
     textoEjemploAccionJugador = ["(Dice un palabra y el resto la repite, añadiendo su propia palabra)"];
-  } else if (valorAccionJugador === "regla") {
+    icono_accionJugador = ['book'];
+    textoAccionJugador = ["empezar una historia"];
+    break;
+  case "regla":
     textoEjemploAccionJugador = ["Como por ejemplo:" + " " + valorEjemplosReglas];
-  } else if (valorAccionJugador === "piquito") {
-    textoEjemploAccionJugador = ["(dar un pequeño beso en los labios)"];
-  } else if (valorAccionJugador === "beso") {
-    textoEjemploAccionJugador = ["(dar un beso de verdad, como los que dan en Francia.)"];
-  } else if (valorAccionJugador === "compañero") {
-    textoEjemploAccionJugador = ["(El compañero tendra que hacer lo mismo. Tomar lo mismo, cumplir las mismas reglas y todo lo demás que el juego mande)"];
-  } else if (valorAccionJugador === "trago") {
+    icono_accionJugador = ['gavel'];
+    textoAccionJugador = ["crear una regla"];
+    break;
+  case "trago":
     textoEjemploAccionJugador = [valorEjemplosTomar];
-  } else if (valorAccionJugador === "shot") {
+    icono_accionJugador = ['beer'];
+    textoAccionJugador = [conjugacionesTomar];
+    break;
+  case "compañero":
+    textoEjemploAccionJugador = ["(El compañero tendra que hacer lo mismo. Tomar lo mismo, cumplir las mismas reglas y todo lo demás que el juego mande)"];
+    icono_accionJugador = ['beer'];
+    textoAccionJugador = ["elegir a alguien para que sufra el mismo destino" + " " + textoValorDuracionAccion];
+    break;
+  case "shot":
     textoEjemploAccionJugador = ["(Un trago fuerte, al seco. Como un disparo)"];
-  } else if (valorAccionJugador === "prenda") {
+    icono_accionJugador = ['glass'];
+    textoAccionJugador = [conjugacionesTomar];
+    break;
+  case "piquito":
+    textoEjemploAccionJugador = ["(dar un pequeño beso en los labios)"];
+    icono_accionJugador = ['heart-o'];
+    textoAccionJugador = [conjugacionesBesar];
+    break;
+  case "beso":
+    textoEjemploAccionJugador = ["(dar un beso de verdad, como los que dan en Francia.)"];
+    icono_accionJugador = ['heart'];
+    textoAccionJugador = [conjugacionesBesar];
+    break;
+  case "prenda":
     textoEjemploAccionJugador = ["(Quitar o quitarse alguna ropa)"];
-  } else if (valorAccionJugador === "penitencia") {
+    icono_accionJugador = ['shopping-bag'];
+    textoAccionJugador = ["quitarse una prenda"]; //A mi me toca quitarse una prenda
+    break;
+  case "penitencia":
     textoEjemploAccionJugador = [valorEjemplosPenitencia];
-  }
+    icono_accionJugador = ['exclamation-circle'];
+    textoAccionJugador = ["cumplir una penitencia"];
+    break;
+  default:
+    icono_accionJugador = ['beer'];
+}
 
-  // Variables turno jugador
-  if (valorTurnoJugador === "yo") {
-    texto_turnoJugador = ["A mi me toca"];
-  } else if (valorTurnoJugador === "izquierda" || valorTurnoJugador === "derecha") {
-    texto_turnoJugador = ["Al de mi" + conjugar];
-  } else if (valorTurnoJugador === "todos") {
-    texto_turnoJugador = ["A" + conjugar];
-  } else if (valorTurnoJugador === "hombres" || valorTurnoJugador === "solteros" || valorTurnoJugador === "en pareja") {
-    texto_turnoJugador = ["A los" + conjugar];
-  } else if (valorTurnoJugador === "mujeres") {
-    texto_turnoJugador = ["A las" + conjugar];
-  } else if (valorTurnoJugador === "viejo" || valorTurnoJugador === "joven" || valorTurnoJugador === "alto" || valorTurnoJugador === "bajo") {
-    texto_turnoJugador = ["Al más" + conjugar];
-  } else if (valorTurnoJugador === "par" || valorTurnoJugador === "impar") {
-    texto_turnoJugador = ["A los nacidos en un año" + " " + valorTurnoJugador + " " + "les toca"];
-  } else if (valorTurnoJugador === "risa") {
-    texto_turnoJugador = ["Al que se ría primero le toca"];
-  } else if (valorTurnoJugador) {
-    texto_turnoJugador = ["Valor Turno jugador not found"];
-  }
-
-  // Iconos acción juego
-  if (valorAccionJugador === "trago") {
-    icono_accionJugador = ["beer"];
-  } else if (valorAccionJugador === "nunca") {
-    icono_accionJugador = ["beer"];
-  } else if (valorAccionJugador === "limon") {
-    icono_accionJugador = ["lemon-o"];
-  } else if (valorAccionJugador === "dedo") {
-    icono_accionJugador = ["hand-o-down"];
-  } else if (valorAccionJugador === "chancho") {
-    icono_accionJugador = ["hand-o-down"];
-  } else if (valorAccionJugador === "aob") {
-    icono_accionJugador = ["fa-adjust"];
-  } else if (valorAccionJugador === "regla") {
-    icono_accionJugador = ["gavel"];
-  } else if (valorAccionJugador === "qlh") {
-    icono_accionJugador = ["balance-scale"];
-  } else if (valorAccionJugador === "vom") {
-    icono_accionJugador = ["bullhorn"];
-  } else if (valorAccionJugador === "cultura") {
-    icono_accionJugador = ["comments"];
-  } else if (valorAccionJugador === "shot") {
-    icono_accionJugador = ["glass"];
-  } else if (valorAccionJugador === "cascada") {
-    icono_accionJugador = ["users"];
-  } else if (valorAccionJugador === "historia") {
-    icono_accionJugador = ["book"];
-  } else if (valorAccionJugador === "piquito") {
-    icono_accionJugador = ["heart-o"];
-  } else if (valorAccionJugador === "beso") {
-    icono_accionJugador = ["heart"];
-  } else if (valorAccionJugador === "prenda") {
-    icono_accionJugador = ["shopping-bag"];
-  } else if (valorAccionJugador === "penitencia") {
-    icono_accionJugador = ["exclamation-circle"];
-  } else if (valorAccionJugador) {
-    icono_accionJugador = ["beer"];
-  }
   console.log(accionJugador);
   console.log(valorAccionJugador);
   console.log(valorTurnoJugador);
