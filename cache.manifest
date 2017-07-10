@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Cache manifest version 1.1
+# Cache manifest version 1.2
 
 css/main.css
 js/app.js
@@ -9,4 +9,7 @@ js/localStorage.js
 NETWORK:
 https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-reboot.css
 https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css
-https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js
+https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js
+https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js
