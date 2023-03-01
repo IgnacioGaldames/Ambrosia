@@ -47,6 +47,7 @@ var ejemplosCultura = [
   "Colores primarios",
   "Números entre el 1 y el 5",
   "Nombres de animales",
+  "Nombres de paises",
 ];
 var ejemplosReglas= [
   "Evitar que alguien haga algo",
