@@ -25,7 +25,8 @@ var ejemplosTomar = [
   "Si alguien lee esto, por favor envíe ayuda",
   "01110100 01101111 01101101 01100001",
   "Jesús convertiría el agua en vino si estuviera en tu lugar",
-  "Yo sé cosas y bebo. Pero la mayoría del tiempo solo sé que bebo."
+  "Yo sé cosas y bebo. Pero la mayoría del tiempo solo sé que bebo.",
+  "toma el shot, deja el canolli"
 ];
 var ejemplosLimon = [
   "limón",
