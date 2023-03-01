@@ -1,6 +1,5 @@
-$(document).foundation();
+
 //Scripts
-new WOW().init();
 
 // #Variables
 var turnoJugador = [
